@@ -135,104 +135,137 @@ export function WebPagesSection() {
           </button>
         </div>
 
-        {/* Modal/Ventana de información (SEGUNDA IMAGEN) */}
+        {/* Modal/Ventana de información (SEGUNDA IMAGEN) - CORREGIDO PARA MÓVIL */}
         {showInfoModal && (
-          <div className="mb-8 animate-fadeIn">
-            <div className="relative rounded-2xl border border-[#eab308]/20 bg-gradient-to-b from-[rgba(20,30,20,0.95)] to-[rgba(10,15,10,0.98)] p-8 backdrop-blur-sm">
-              {/* Decoración */}
-              <div className="absolute left-0 top-0 h-1 w-20 rounded-tl-2xl bg-gradient-to-r from-[#eab308] to-transparent" />
-              <div className="absolute right-0 top-0 h-1 w-20 rounded-tr-2xl bg-gradient-to-l from-[#22c55e] to-transparent" />
-
-              {/* Botón cerrar */}
-              <button
-                onClick={() => setShowInfoModal(false)}
-                className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-white/60 transition-all hover:bg-[rgba(234,179,8,0.2)] hover:text-[#eab308]"
+          <>
+            {/* Overlay oscuro - permite cerrar al hacer clic fuera */}
+            <div 
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
+              onClick={() => setShowInfoModal(false)}
+              style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
+            />
+            
+            {/* Modal centrado - CORREGIDO: z-index más alto y pointer-events: auto */}
+            <div className="fixed inset-0 flex items-center justify-center p-4 z-50 overflow-y-auto">
+              <div 
+                className="relative w-full max-w-2xl rounded-2xl border border-[#eab308]/20 bg-gradient-to-b from-[rgba(20,30,20,0.98)] to-[rgba(10,15,10,0.98)] p-6 sm:p-8 backdrop-blur-sm shadow-2xl"
+                style={{ 
+                  pointerEvents: "auto",
+                  touchAction: "manipulation",
+                  WebkitTapHighlightColor: "transparent",
+                  maxHeight: "90vh",
+                  overflowY: "auto"
+                }}
+                onClick={(e) => e.stopPropagation()} // Evita que el clic en el modal lo cierre
               >
-                ✕
-              </button>
+                {/* Decoración */}
+                <div className="absolute left-0 top-0 h-1 w-20 rounded-tl-2xl bg-gradient-to-r from-[#eab308] to-transparent" />
+                <div className="absolute right-0 top-0 h-1 w-20 rounded-tr-2xl bg-gradient-to-l from-[#22c55e] to-transparent" />
 
-              {/* Contenido de la SEGUNDA IMAGEN */}
-              <div className="space-y-6">
-                {/* Título principal */}
-                <h3
-                  className="text-center text-2xl font-bold uppercase tracking-wider text-[#eab308] sm:text-3xl"
-                  style={{ fontFamily: "var(--font-orbitron)" }}
+                {/* Botón cerrar */}
+                <button
+                  onClick={() => setShowInfoModal(false)}
+                  className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.1)] text-white/80 transition-all hover:bg-[rgba(234,179,8,0.2)] hover:text-[#eab308] z-10"
+                  style={{ minHeight: "40px", minWidth: "40px" }} // Tamaño mínimo para móvil
                 >
-                  ¿Tu marca está lista para el siguiente nivel?
-                </h3>
+                  ✕
+                </button>
 
-                {/* Texto destacado */}
-                <p className="text-center text-base leading-relaxed text-[#d1d5db] sm:text-lg">
-                  En <strong className="text-white">Printworks</strong> unimos lo
-                  mejor de dos mundos. Creamos{" "}
-                  <strong className="text-[#eab308]">
-                    impresiones que impactan
-                  </strong>{" "}
-                  y{" "}
-                  <strong className="text-[#22c55e]">
-                    páginas web que convierten
-                  </strong>
-                  .
-                </p>
-
-                <p className="text-center text-sm leading-relaxed text-[#9ca3af] sm:text-base">
-                  No importa si estás en <strong className="text-white">Cali</strong>
-                  , en cualquier lugar de{" "}
-                  <strong className="text-white">Colombia</strong> o incluso en otro
-                  país. Personalizamos tu éxito con estilo, tecnología y seguridad.
-                </p>
-
-                {/* Separador decorativo */}
-                <div className="relative py-4">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-[rgba(234,179,8,0.2)]"></div>
-                  </div>
-                  <div className="relative flex justify-center">
-                    <span className="bg-[rgba(10,20,10,0.98)] px-4 text-xs text-[#eab308]">
-                      ⚠️ ATENCIÓN
-                    </span>
-                  </div>
-                </div>
-
-                {/* Mensaje de advertencia */}
-                <div className="rounded-xl border border-[#eab308]/20 bg-[rgba(234,179,8,0.05)] p-6 text-center">
-                  <p className="mb-4 text-base leading-relaxed text-[#d1d5db]">
-                    Muchos emprendedores construyen su marca solo en redes sociales.
-                    Pero las redes son{" "}
-                    <strong className="text-[#eab308]">"terreno prestado"</strong>.
-                    Si mañana cambia el algoritmo o cierran tu cuenta...
-                  </p>
-                  <p className="mb-4 text-2xl font-black text-[#ef4444]">
-                    ¡Tu negocio desaparece!
-                  </p>
-
-                  {/* Property box */}
-                  <div className="mt-6 rounded-lg border border-[#22c55e]/30 bg-[rgba(34,197,94,0.05)] p-5">
-                    <h4 className="mb-2 text-lg font-bold text-white">
-                      Una página web es tu propiedad privada
-                    </h4>
-                    <p className="text-sm text-[#d1d5db]">
-                      Es el único lugar donde tú pones las reglas y donde tus
-                      clientes pueden encontrarte en Google cuando buscan tus
-                      servicios.
-                    </p>
-                  </div>
-                </div>
-
-                {/* CTA dentro del modal */}
-                <div className="flex justify-center pt-4">
-                  <a
-                    href="#contacto"
-                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#eab308] to-[#22c55e] px-8 py-3 text-sm font-bold uppercase tracking-wider text-[#0a0f0a] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]"
+                {/* Contenido de la SEGUNDA IMAGEN */}
+                <div className="space-y-6">
+                  {/* Título principal */}
+                  <h3
+                    className="text-center text-2xl font-bold uppercase tracking-wider text-[#eab308] sm:text-3xl pr-8"
+                    style={{ fontFamily: "var(--font-orbitron)" }}
                   >
-                    <span>🚀</span>
-                    Quiero mi página web
-                    <span>✨</span>
-                  </a>
+                    ¿Tu marca está lista para el siguiente nivel?
+                  </h3>
+
+                  {/* Texto destacado */}
+                  <p className="text-center text-base leading-relaxed text-[#d1d5db] sm:text-lg">
+                    En <strong className="text-white">Printworks</strong> unimos lo
+                    mejor de dos mundos. Creamos{" "}
+                    <strong className="text-[#eab308]">
+                      impresiones que impactan
+                    </strong>{" "}
+                    y{" "}
+                    <strong className="text-[#22c55e]">
+                      páginas web que convierten
+                    </strong>
+                    .
+                  </p>
+
+                  <p className="text-center text-sm leading-relaxed text-[#9ca3af] sm:text-base">
+                    No importa si estás en <strong className="text-white">Cali</strong>
+                    , en cualquier lugar de{" "}
+                    <strong className="text-white">Colombia</strong> o incluso en otro
+                    país. Personalizamos tu éxito con estilo, tecnología y seguridad.
+                  </p>
+
+                  {/* Separador decorativo */}
+                  <div className="relative py-4">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t border-[rgba(234,179,8,0.2)]"></div>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <span className="bg-[rgba(10,20,10,0.98)] px-4 text-xs text-[#eab308]">
+                        ⚠️ ATENCIÓN
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Mensaje de advertencia */}
+                  <div className="rounded-xl border border-[#eab308]/20 bg-[rgba(234,179,8,0.05)] p-6 text-center">
+                    <p className="mb-4 text-base leading-relaxed text-[#d1d5db]">
+                      Muchos emprendedores construyen su marca solo en redes sociales.
+                      Pero las redes son{" "}
+                      <strong className="text-[#eab308]">"terreno prestado"</strong>.
+                      Si mañana cambia el algoritmo o cierran tu cuenta...
+                    </p>
+                    <p className="mb-4 text-2xl font-black text-[#ef4444]">
+                      ¡Tu negocio desaparece!
+                    </p>
+
+                    {/* Property box */}
+                    <div className="mt-6 rounded-lg border border-[#22c55e]/30 bg-[rgba(34,197,94,0.05)] p-5">
+                      <h4 className="mb-2 text-lg font-bold text-white">
+                        Una página web es tu propiedad privada
+                      </h4>
+                      <p className="text-sm text-[#d1d5db]">
+                        Es el único lugar donde tú pones las reglas y donde tus
+                        clientes pueden encontrarte en Google cuando buscan tus
+                        servicios.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* CTA dentro del modal - CORREGIDO PARA MÓVIL */}
+                  <div className="flex justify-center pt-4">
+                    <a
+                      href="#contacto"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#eab308] to-[#22c55e] px-8 py-4 text-sm font-bold uppercase tracking-wider text-[#0a0f0a] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] active:scale-95"
+                      style={{ 
+                        pointerEvents: "auto",
+                        cursor: "pointer",
+                        touchAction: "manipulation",
+                        WebkitTapHighlightColor: "transparent",
+                        minWidth: "200px",
+                        minHeight: "50px"
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowInfoModal(false); // Opcional: cierra el modal al hacer clic
+                      }}
+                    >
+                      <span className="text-lg">🚀</span>
+                      OBTENER PÁGINA WEB
+                      <span className="text-lg">✨</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </>
         )}
 
         {/* El resto del contenido - TERCERA IMAGEN */}
