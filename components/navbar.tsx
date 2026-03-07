@@ -73,7 +73,7 @@ export function Navbar({ onOpenService }: { onOpenService: (id: number) => void 
             </button>
           ))}
           <a
-            href="https://wa.me/573187092130?text=Hola%20PRINTWORKS!%20Quiero%20cotizar%20un%20servicio."
+            href="https://wa.me/573173799589?text=Hola%20PRINTWORKS!%20Quiero%20cotizar%20un%20servicio."
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 block w-full rounded-full bg-[#22c55e] px-5 py-3 text-center text-sm font-semibold text-[#0a0f0a]"

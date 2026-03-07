@@ -9,12 +9,12 @@ export function HeroSection() {
       className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-4 pt-28"
     >
 
-      {/* fondo radial */}
+      {/* fondo radial verde */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 70% 40%, rgba(34,197,94,0.07) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 70% 40%, rgba(34,197,94,0.12) 0%, transparent 70%)",
         }}
       />
 
@@ -34,21 +34,15 @@ export function HeroSection() {
             className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-orbitron, Rajdhani, sans-serif)" }}
           >
-            SOLUCIONES
+            POTENCIAMOS
             <br />
-            DE IMPRESIÓN
+            TU MARCA
             <br />
-            DE{" "}
+            EN EL{" "}
             <span className="text-[#22c55e] drop-shadow-[0_0_20px_rgba(34,197,94,0.7)]">
-              ALTO IMPACTO
+              MUNDO REAL Y DIGITAL
             </span>
           </h1>
-
-          <p className="mb-5 text-lg leading-relaxed text-[#cbd5cb]">
-            Potenciamos tu marca en el mundo{" "}
-            <span className="text-white font-semibold">real</span> y{" "}
-            <span className="text-[#eab308] font-semibold">digital</span>.
-          </p>
 
           <p className="mb-6 text-base leading-relaxed text-[#9ca3af]">
             Somos expertos en soluciones de alto impacto: desde{" "}
@@ -79,7 +73,6 @@ export function HeroSection() {
             </p>
 
             <p>
-              {" "}
               <span className="text-white font-medium">
                 Confianza total:
               </span>{" "}
@@ -120,26 +113,29 @@ export function HeroSection() {
         {/* LOGO */}
         <div className="relative flex items-center justify-center">
 
-          {/* glow verde */}
+          {/* glow verde grande */}
           <div
-            className="absolute w-[450px] h-[450px] rounded-full blur-3xl"
+            className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
             style={{
               background:
-                "radial-gradient(circle, rgba(34,197,94,0.35) 0%, rgba(255,255,255,0.15) 40%, transparent 70%)",
+                "radial-gradient(circle, rgba(34,197,94,0.35) 0%, rgba(34,197,94,0.12) 40%, transparent 70%)",
             }}
           />
 
-          {/* fondo blanco difuminado */}
-          <div className="relative rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.85)_0%,rgba(255,255,255,0.35)_40%,rgba(255,255,255,0.08)_70%,transparent_100%)] p-6 shadow-[0_0_90px_rgba(34,197,94,0.3)]">
+          {/* fondo oscuro elegante */}
+          <div className="relative rounded-full bg-[radial-gradient(circle,rgba(5,15,5,0.9)_0%,rgba(5,15,5,0.5)_40%,transparent_70%)] p-8 shadow-[0_0_120px_rgba(34,197,94,0.35)]">
 
-            <div className="relative h-[240px] w-[240px] sm:h-[300px] sm:w-[300px] lg:h-[400px] lg:w-[400px]">
+            {/* LOGO GRANDE */}
+            <div className="relative h-[320px] w-[320px] sm:h-[420px] sm:w-[420px] lg:h-[520px] lg:w-[520px]">
+
               <Image
                 src="/images/logo-printworks.png"
                 alt="PRINTWORKS"
                 fill
-                className="object-contain"
+                className="object-contain drop-shadow-[0_0_35px_rgba(34,197,94,0.6)]"
                 priority
               />
+
             </div>
 
           </div>

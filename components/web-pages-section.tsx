@@ -1,168 +1,330 @@
-"use client"
+"use client";
+
+import { useState } from "react";
 
 export function WebPagesSection() {
+  const [showInfoModal, setShowInfoModal] = useState(false);
+
   return (
     <section id="paginas-web" className="relative px-4 py-20 sm:py-28">
-      <div className="mx-auto max-w-4xl">
+      {/* Fondo decorativo */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 30% 40%, rgba(34,197,94,0.05) 0%, transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
 
-        {/* Main heading */}
-        <div className="mb-10 text-center">
+      <div className="relative z-10 mx-auto max-w-4xl">
+        {/* EJEMPLOS DE PÁGINAS WEB - PRIMERA IMAGEN */}
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#22c55e] sm:text-sm">
+            EJEMPLOS DE PÁGINAS WEB
+          </p>
           <h2
-            className="mb-4 text-2xl font-bold uppercase leading-tight tracking-wider sm:text-3xl md:text-4xl"
-            style={{ color: "#eab308", fontFamily: "var(--font-orbitron)" }}
-          >
-            ¿Tu marca está lista para el siguiente nivel?
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[#d1d5db] sm:text-base">
-            En <strong className="text-white">Printworks</strong> unimos lo mejor de dos mundos.
-            Creamos <strong className="text-[#eab308]">impresiones que impactan</strong> y
-            <strong className="text-[#22c55e]"> páginas web que convierten</strong>.
-          </p>
-
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#9ca3af] sm:text-base">
-            No importa si estás en <strong className="text-white">Cali</strong>,
-            en cualquier lugar de <strong className="text-white">Colombia</strong> o incluso en otro país.
-            Personalizamos tu éxito con estilo, tecnología y seguridad.
-          </p>
-        </div>
-
-        {/* Body text */}
-        <div className="mb-8 text-center text-sm leading-relaxed text-[#d1d5db] sm:text-base">
-          <p className="mb-4">
-            Muchos emprendedores construyen su marca solo en redes sociales.
-            Pero las redes son <strong className="text-[#eab308]">"terreno prestado"</strong>.
-            Si mañana cambia el algoritmo o cierran tu cuenta...
-          </p>
-          <p className="text-lg font-bold text-[#ef4444]">
-            Tu negocio desaparece!
-          </p>
-        </div>
-
-        {/* Property box */}
-        <div className="mx-auto mb-12 max-w-2xl rounded-xl border border-[rgba(34,197,94,0.25)] bg-[rgba(10,20,10,0.6)] p-6 text-center sm:p-8">
-          <h3 className="mb-3 text-lg font-bold text-white sm:text-xl">
-            Una página web es tu propiedad privada
-          </h3>
-          <p className="text-sm leading-relaxed text-[#d1d5db]">
-            Es el único lugar donde tú pones las reglas y donde tus clientes pueden
-            encontrarte en Google cuando buscan tus servicios.
-          </p>
-        </div>
-
-        {/* Plans heading */}
-        <div className="mb-8 text-center">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#22c55e]">
-            Ejemplos de páginas web
-          </p>
-          <h3
-            className="text-xl font-bold uppercase tracking-wider text-white sm:text-2xl"
+            className="mb-8 text-2xl font-bold uppercase leading-tight tracking-wider text-white sm:text-3xl md:text-4xl"
             style={{ fontFamily: "var(--font-orbitron)" }}
           >
-            Soluciones a la medida <span className="text-[#22c55e]">para hacer crecer tu negocio</span>
-          </h3>
+            SOLUCIONES A LA MEDIDA{" "}
+            <span className="text-[#22c55e]">PARA HACER CRECER TU NEGOCIO</span>
+          </h2>
         </div>
 
-        {/* 3 Plan cards */}
-        <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
-
-          {/* Plan 1 */}
-          <div className="rounded-xl border border-[rgba(34,197,94,0.2)] bg-[rgba(10,20,10,0.5)] p-5 transition-all hover:border-[#22c55e] hover:shadow-[0_0_20px_rgba(34,197,94,0.08)]">
-            <div className="mb-3 flex items-center gap-2">
-              <span className="text-lg">📍</span>
-              <h4 className="text-sm font-bold text-white">
-                Nivel 1 - <span className="text-[#22c55e]">Plan Presencia</span>
-              </h4>
+        {/* 3 Plan cards - PRIMERO (como en la primera imagen) */}
+        <div className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {/* Plan 1 - Presencia */}
+          <div className="group rounded-xl border border-[rgba(34,197,94,0.2)] bg-[rgba(10,20,10,0.5)] p-6 transition-all hover:border-[#22c55e] hover:shadow-[0_0_30px_rgba(34,197,94,0.15)]">
+            <div className="mb-4 flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#22c55e]/10 text-xl">
+                📍
+              </span>
+              <h3 className="text-base font-bold text-white">
+                Nivel 1 -{" "}
+                <span className="text-[#22c55e] group-hover:underline">
+                  Plan Presencia
+                </span>
+              </h3>
             </div>
-            <p className="mb-3 text-xs leading-relaxed text-[#9ca3af]">
-              Ideal para negocios locales que necesitan aparecer en Google y mostrar
-              su información profesional a clientes.
+            <p className="mb-4 text-sm leading-relaxed text-[#9ca3af]">
+              Ideal para negocios locales que necesitan aparecer en Google y
+              mostrar su información profesional a clientes.
             </p>
-            <p className="text-xs font-semibold text-[#eab308]">
-              Si no estás en Google, no existes!
-            </p>
+            <div className="border-t border-[rgba(34,197,94,0.2)] pt-4">
+              <p className="text-center text-sm font-bold text-[#eab308]">
+                ⚡ Si no estás en Google, ¡no existes!
+              </p>
+            </div>
           </div>
 
-          {/* Plan 2 */}
-          <div className="rounded-xl border border-[rgba(234,179,8,0.25)] bg-[rgba(10,20,10,0.5)] p-5 transition-all hover:border-[#eab308] hover:shadow-[0_0_20px_rgba(234,179,8,0.08)]">
-            <div className="mb-3 flex items-center gap-2">
-              <span className="text-lg">📈</span>
-              <h4 className="text-sm font-bold text-white">
-                Nivel 2 - <span className="text-[#eab308]">Plan Crecimiento</span>
-              </h4>
+          {/* Plan 2 - Crecimiento */}
+          <div className="group rounded-xl border border-[rgba(234,179,8,0.25)] bg-[rgba(10,20,10,0.5)] p-6 transition-all hover:border-[#eab308] hover:shadow-[0_0_30px_rgba(234,179,8,0.15)]">
+            <div className="mb-4 flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#eab308]/10 text-xl">
+                📈
+              </span>
+              <h3 className="text-base font-bold text-white">
+                Nivel 2 -{" "}
+                <span className="text-[#eab308] group-hover:underline">
+                  Plan Crecimiento
+                </span>
+              </h3>
             </div>
-            <p className="mb-3 text-xs leading-relaxed text-[#9ca3af]">
-              Páginas web diseñadas para generar clientes automáticamente,
-              con formularios, contacto directo y automatización básica.
+            <p className="mb-4 text-sm leading-relaxed text-[#9ca3af]">
+              Páginas web diseñadas para generar clientes automáticamente, con
+              formularios, contacto directo y automatización básica.
             </p>
-            <p className="text-xs font-semibold text-[#22c55e]">
-              Diseño Responsive + Optimización SEO
-            </p>
+            <div className="border-t border-[rgba(234,179,8,0.2)] pt-4">
+              <p className="text-center text-sm font-bold text-[#22c55e]">
+                📱 Diseño Responsive + Optimización SEO
+              </p>
+            </div>
           </div>
 
-          {/* Plan 3 */}
-          <div className="rounded-xl border border-[rgba(239,68,68,0.2)] bg-[rgba(10,20,10,0.5)] p-5 transition-all hover:border-[#ef4444] hover:shadow-[0_0_20px_rgba(239,68,68,0.08)]">
-            <div className="mb-3 flex items-center gap-2">
-              <span className="text-lg">🚀</span>
-              <h4 className="text-sm font-bold text-white">
-                Nivel 3 - <span className="text-[#ef4444]">Plan Escala</span>
-              </h4>
+          {/* Plan 3 - Escala */}
+          <div className="group rounded-xl border border-[rgba(239,68,68,0.2)] bg-[rgba(10,20,10,0.5)] p-6 transition-all hover:border-[#ef4444] hover:shadow-[0_0_30px_rgba(239,68,68,0.15)]">
+            <div className="mb-4 flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ef4444]/10 text-xl">
+                🚀
+              </span>
+              <h3 className="text-base font-bold text-white">
+                Nivel 3 -{" "}
+                <span className="text-[#ef4444] group-hover:underline">
+                  Plan Escala
+                </span>
+              </h3>
             </div>
-            <p className="mb-3 text-xs leading-relaxed text-[#9ca3af]">
-              Infraestructura robusta para empresas que necesitan
-              E-Commerce o plataformas más avanzadas.
+            <p className="mb-4 text-sm leading-relaxed text-[#9ca3af]">
+              Infraestructura robusta para empresas que necesitan E-Commerce o
+              plataformas más avanzadas.
             </p>
-            <p className="text-xs font-semibold text-[#eab308]">
-              Seguridad, velocidad y estabilidad profesional.
-            </p>
+            <div className="border-t border-[rgba(239,68,68,0.2)] pt-4">
+              <p className="text-center text-sm font-bold text-[#eab308]">
+                🔒 Seguridad, velocidad y estabilidad profesional.
+              </p>
+            </div>
           </div>
-
         </div>
 
-        {/* Por que trabajar con nosotros */}
-        <div className="mb-10">
-          <h3
-            className="mb-6 text-center text-xl font-bold uppercase tracking-wider sm:text-2xl"
-            style={{ color: "#eab308", fontFamily: "var(--font-orbitron)" }}
+        {/* Botón de información flotante - SEGUNDA IMAGEN */}
+        <div className="mb-8 flex justify-center">
+          <button
+            onClick={() => setShowInfoModal(!showInfoModal)}
+            className="group relative inline-flex items-center gap-3 rounded-full border border-[#eab308]/30 bg-[rgba(10,20,10,0.8)] px-8 py-4 transition-all hover:border-[#eab308] hover:shadow-[0_0_30px_rgba(234,179,8,0.2)]"
           >
-            Por qué trabajar con nosotros
-          </h3>
-
-          <ul className="mx-auto flex max-w-xl flex-col gap-3">
-            <li className="flex items-start gap-3 text-sm text-[#d1d5db]">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[rgba(34,197,94,0.15)] text-xs text-[#22c55e]">✓</span>
-              Diseño <strong className="text-white">Responsive</strong> que se ve perfecto en celular, tablet y computador.
-            </li>
-
-            <li className="flex items-start gap-3 text-sm text-[#d1d5db]">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[rgba(34,197,94,0.15)] text-xs text-[#22c55e]">✓</span>
-              Optimización <strong className="text-[#22c55e]">SEO</strong> para aparecer en Google.
-            </li>
-
-            <li className="flex items-start gap-3 text-sm text-[#d1d5db]">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[rgba(34,197,94,0.15)] text-xs text-[#22c55e]">✓</span>
-              Sitios ultra rápidos que cargan en <strong className="text-white">menos de 2 segundos</strong>.
-            </li>
-
-            <li className="flex items-start gap-3 text-sm text-[#d1d5db]">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[rgba(34,197,94,0.15)] text-xs text-[#22c55e]">✓</span>
-              Enfoque <strong className="text-white">100% en conversión</strong> para generar clientes.
-            </li>
-          </ul>
+            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#eab308]/0 via-[#eab308]/10 to-[#eab308]/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#eab308]/20 text-xl">
+              💡
+            </span>
+            <span className="relative text-sm font-bold uppercase tracking-wider text-white">
+              ¿Por qué necesitas una página web?
+            </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className={`relative h-5 w-5 text-[#eab308] transition-transform duration-300 ${
+                showInfoModal ? "rotate-180" : ""
+              }`}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center">
-          <p className="mb-2 text-sm font-bold text-white sm:text-base">
-            Es hora de que tu negocio trabaje mientras tú descansas
-          </p>
-          <p className="mb-6 text-xs text-[#9ca3af]">
-            Una página web profesional es tu mejor vendedor
-            <strong className="text-[#22c55e]"> disponible 24/7</strong>
-          </p>
-        </div>
+        {/* Modal/Ventana de información (SEGUNDA IMAGEN) */}
+        {showInfoModal && (
+          <div className="mb-8 animate-fadeIn">
+            <div className="relative rounded-2xl border border-[#eab308]/20 bg-gradient-to-b from-[rgba(20,30,20,0.95)] to-[rgba(10,15,10,0.98)] p-8 backdrop-blur-sm">
+              {/* Decoración */}
+              <div className="absolute left-0 top-0 h-1 w-20 rounded-tl-2xl bg-gradient-to-r from-[#eab308] to-transparent" />
+              <div className="absolute right-0 top-0 h-1 w-20 rounded-tr-2xl bg-gradient-to-l from-[#22c55e] to-transparent" />
 
+              {/* Botón cerrar */}
+              <button
+                onClick={() => setShowInfoModal(false)}
+                className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-white/60 transition-all hover:bg-[rgba(234,179,8,0.2)] hover:text-[#eab308]"
+              >
+                ✕
+              </button>
+
+              {/* Contenido de la SEGUNDA IMAGEN */}
+              <div className="space-y-6">
+                {/* Título principal */}
+                <h3
+                  className="text-center text-2xl font-bold uppercase tracking-wider text-[#eab308] sm:text-3xl"
+                  style={{ fontFamily: "var(--font-orbitron)" }}
+                >
+                  ¿Tu marca está lista para el siguiente nivel?
+                </h3>
+
+                {/* Texto destacado */}
+                <p className="text-center text-base leading-relaxed text-[#d1d5db] sm:text-lg">
+                  En <strong className="text-white">Printworks</strong> unimos lo
+                  mejor de dos mundos. Creamos{" "}
+                  <strong className="text-[#eab308]">
+                    impresiones que impactan
+                  </strong>{" "}
+                  y{" "}
+                  <strong className="text-[#22c55e]">
+                    páginas web que convierten
+                  </strong>
+                  .
+                </p>
+
+                <p className="text-center text-sm leading-relaxed text-[#9ca3af] sm:text-base">
+                  No importa si estás en <strong className="text-white">Cali</strong>
+                  , en cualquier lugar de{" "}
+                  <strong className="text-white">Colombia</strong> o incluso en otro
+                  país. Personalizamos tu éxito con estilo, tecnología y seguridad.
+                </p>
+
+                {/* Separador decorativo */}
+                <div className="relative py-4">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-[rgba(234,179,8,0.2)]"></div>
+                  </div>
+                  <div className="relative flex justify-center">
+                    <span className="bg-[rgba(10,20,10,0.98)] px-4 text-xs text-[#eab308]">
+                      ⚠️ ATENCIÓN
+                    </span>
+                  </div>
+                </div>
+
+                {/* Mensaje de advertencia */}
+                <div className="rounded-xl border border-[#eab308]/20 bg-[rgba(234,179,8,0.05)] p-6 text-center">
+                  <p className="mb-4 text-base leading-relaxed text-[#d1d5db]">
+                    Muchos emprendedores construyen su marca solo en redes sociales.
+                    Pero las redes son{" "}
+                    <strong className="text-[#eab308]">"terreno prestado"</strong>.
+                    Si mañana cambia el algoritmo o cierran tu cuenta...
+                  </p>
+                  <p className="mb-4 text-2xl font-black text-[#ef4444]">
+                    ¡Tu negocio desaparece!
+                  </p>
+
+                  {/* Property box */}
+                  <div className="mt-6 rounded-lg border border-[#22c55e]/30 bg-[rgba(34,197,94,0.05)] p-5">
+                    <h4 className="mb-2 text-lg font-bold text-white">
+                      Una página web es tu propiedad privada
+                    </h4>
+                    <p className="text-sm text-[#d1d5db]">
+                      Es el único lugar donde tú pones las reglas y donde tus
+                      clientes pueden encontrarte en Google cuando buscan tus
+                      servicios.
+                    </p>
+                  </div>
+                </div>
+
+                {/* CTA dentro del modal */}
+                <div className="flex justify-center pt-4">
+                  <a
+                    href="#contacto"
+                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#eab308] to-[#22c55e] px-8 py-3 text-sm font-bold uppercase tracking-wider text-[#0a0f0a] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]"
+                  >
+                    <span>🚀</span>
+                    Quiero mi página web
+                    <span>✨</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* El resto del contenido - TERCERA IMAGEN */}
+        <div className="mt-12">
+          {/* Título modificado - AHORA DICE "POR QUÉ TRABAJAR CON NOSOTROS TU PAGINA WEB?" */}
+          <div className="mb-10">
+            <h3
+              className="mb-6 text-center text-xl font-bold uppercase tracking-wider sm:text-2xl"
+              style={{ color: "#eab308", fontFamily: "var(--font-orbitron)" }}
+            >
+              POR QUÉ TRABAJAR CON NOSOTROS TU PAGINA WEB?
+            </h3>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="flex items-start gap-3 rounded-lg border border-[rgba(34,197,94,0.1)] bg-[rgba(10,20,10,0.3)] p-4">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[rgba(34,197,94,0.15)] text-sm text-[#22c55e]">
+                  ✓
+                </span>
+                <p className="text-sm text-[#d1d5db]">
+                  Diseño <strong className="text-white">Responsive</strong> que se ve
+                  perfecto en celular, tablet y computador.
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3 rounded-lg border border-[rgba(34,197,94,0.1)] bg-[rgba(10,20,10,0.3)] p-4">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[rgba(34,197,94,0.15)] text-sm text-[#22c55e]">
+                  ✓
+                </span>
+                <p className="text-sm text-[#d1d5db]">
+                  Optimización <strong className="text-[#22c55e]">SEO</strong> para
+                  aparecer en Google.
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3 rounded-lg border border-[rgba(34,197,94,0.1)] bg-[rgba(10,20,10,0.3)] p-4">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[rgba(34,197,94,0.15)] text-sm text-[#22c55e]">
+                  ✓
+                </span>
+                <p className="text-sm text-[#d1d5db]">
+                  Sitios ultra rápidos que cargan en{" "}
+                  <strong className="text-white">menos de 2 segundos</strong>.
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3 rounded-lg border border-[rgba(34,197,94,0.1)] bg-[rgba(10,20,10,0.3)] p-4">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[rgba(34,197,94,0.15)] text-sm text-[#22c55e]">
+                  ✓
+                </span>
+                <p className="text-sm text-[#d1d5db]">
+                  Enfoque <strong className="text-white">100% en conversión</strong>{" "}
+                  para generar clientes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center">
+            <div className="inline-block rounded-2xl border border-[rgba(34,197,94,0.2)] bg-gradient-to-b from-[rgba(34,197,94,0.05)] to-transparent p-6">
+              <p className="mb-2 text-base font-bold text-white sm:text-lg">
+                Es hora de que tu negocio trabaje mientras tú descansas
+              </p>
+              <p className="text-sm text-[#9ca3af]">
+                Una página web profesional es tu mejor vendedor{" "}
+                <strong className="text-[#22c55e]">disponible 24/7</strong>
+              </p>
+              <div className="mt-4 flex justify-center gap-2 text-2xl">
+                <span>⚡</span>
+                <span>🚀</span>
+                <span>💡</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Estilos para animación */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+      `}</style>
     </section>
-  )
+  );
 }

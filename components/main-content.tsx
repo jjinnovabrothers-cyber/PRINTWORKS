@@ -77,7 +77,7 @@ const SERVICES: ServiceData[] = [
     whatsappMsg: "Hola PRINTWORKS! Me interesa la produccion litografica.",
   },
   {
-    title: "E-COMMERCE", icon: <ShoppingCart className="h-5 w-5" />,
+    title: "DISEÑO DE PAGINAS WEB", icon: <ShoppingCart className="h-5 w-5" />,
     description: "Sube tus productos con fotos y enlaces directos. Gestiona tu tienda en linea con PRINTWORKS.",
     isEcommerce: true,
     items: [

@@ -97,7 +97,7 @@ items: [
 
 {
 id: 5,
-title: "Servicios de Ingeniería y Desarrollo",
+title: "DISEÑO DE PAGINAS WEB",
 icon: <CartIcon />,
 description: "Soluciones tecnológicas avanzadas para empresas que buscan escalar su negocio con infraestructura digital segura, automatización e inteligencia artificial.",
 coverImage: "/images/products/ecommerce.jpg",

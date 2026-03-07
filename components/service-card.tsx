@@ -67,7 +67,7 @@ export function ServiceCard({ title, icon, description, items, whatsappMessage }
         {/* Action buttons */}
         <div className="mt-4 flex flex-wrap gap-3">
           <a
-            href={`https://wa.me/573187092130?text=${encodeURIComponent(whatsappMessage)}`}
+            href={`https://wa.me/573173799589?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg bg-[#22c55e] px-5 py-2.5 text-sm font-bold tracking-wider text-[#0a0f0a] transition-all duration-300 hover:bg-[#16a34a] hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] hover:scale-105"
