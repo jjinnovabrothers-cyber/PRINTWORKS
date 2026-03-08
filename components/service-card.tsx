@@ -19,7 +19,7 @@ export function ServiceCard({ title, icon, description, items, whatsappMessage }
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     const text = `Hola PRINTWORKS! Soy ${formData.nombre}. ${formData.mensaje}. Mi correo: ${formData.email}. Mi WhatsApp: ${formData.whatsapp}. Servicio: ${title}`
-    window.open(`https://wa.me/573152572025?text=${encodeURIComponent(text)}`, "_blank")
+    window.open(`https://wa.me/573173799589?text=${encodeURIComponent(text)}`, "_blank")
     setShowContactForm(false)
     setFormData({ nombre: "", email: "", whatsapp: "", mensaje: "" })
   }

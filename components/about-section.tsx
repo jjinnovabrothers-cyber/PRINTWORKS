@@ -45,7 +45,7 @@ export function AboutSection() {
           {/* CTA */}
           <div className="mt-8 text-center">
             <a
-              href="https://wa.me/573152572025?text=Hola%20PRINTWORKS%2C%20quiero%20conocer%20mas%20sobre%20sus%20servicios"
+              href="https://wa.me/573173799589?text=Hola%20PRINTWORKS%2C%20quiero%20conocer%20mas%20sobre%20sus%20servicios"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-[#22c55e] px-8 py-3 text-sm font-bold tracking-wider text-[#0a0f0a] transition-all duration-300 hover:bg-[#16a34a] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:scale-105"

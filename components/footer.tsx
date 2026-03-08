@@ -30,7 +30,7 @@ export function Footer() {
         </p>
 
         <a
-          href="https://wa.me/573152572025?text=Hola%20PRINTWORKS!%20Quiero%20cotizar%20un%20servicio."
+          href="https://wa.me/573173799589?text=Hola%20PRINTWORKS!%20Quiero%20cotizar%20un%20servicio."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-[#22c55e] px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-[#0a0f0a] transition-all hover:bg-[#16a34a] hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]"

@@ -140,7 +140,7 @@ function ContactForm({ serviceName }: { serviceName: string }) {
 
   const handleSubmit = () => {
     const msg = `Hola PRINTWORKS! Soy ${form.nombre}. Telefono: ${form.telefono}. Correo: ${form.correo}. Servicio: ${serviceName}. Detalle: ${form.descripcion}`
-    window.open(`https://wa.me/573152572025?text=${encodeURIComponent(msg)}`, "_blank")
+    window.open(`https://wa.me/573173799589?text=${encodeURIComponent(msg)}`, "_blank")
     setSent(true)
   }
 

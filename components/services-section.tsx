@@ -167,7 +167,7 @@ function ServiceModal({ service, onClose }: { service: Service; onClose: () => v
 
   const handleSubmit = () => {
     const m = `${service.whatsappMsg}%0ANombre: ${form.nombre}%0ATelefono: ${form.telefono}%0ACorreo: ${form.correo}%0ADescripcion: ${form.descripcion}`
-    window.open(`https://wa.me/573152572025?text=${m}`, "_blank")
+    window.open(`https://wa.me/573173799589?text=${m}`, "_blank")
   }
 
   const prevImg = useCallback(() => { if (lightboxIdx !== null) setLightboxIdx(lightboxIdx <= 0 ? service.items.length - 1 : lightboxIdx - 1) }, [lightboxIdx, service.items.length])
