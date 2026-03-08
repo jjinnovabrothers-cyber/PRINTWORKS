@@ -18,7 +18,7 @@ export function WebPagesSection() {
       />
 
       <div className="relative z-10 mx-auto max-w-4xl">
-        {/* EJEMPLOS DE PÁGINAS WEB - PRIMERA IMAGEN */}
+        {/* EJEMPLOS DE PÁGINAS WEB */}
         <div className="mb-12 text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#22c55e] sm:text-sm">
             EJEMPLOS DE PÁGINAS WEB
@@ -32,7 +32,7 @@ export function WebPagesSection() {
           </h2>
         </div>
 
-        {/* 3 Plan cards - PRIMERO (como en la primera imagen) */}
+        {/* 3 Plan cards */}
         <div className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {/* Plan 1 - Presencia */}
           <div className="group rounded-xl border border-[rgba(34,197,94,0.2)] bg-[rgba(10,20,10,0.5)] p-6 transition-all hover:border-[#22c55e] hover:shadow-[0_0_30px_rgba(34,197,94,0.15)]">
@@ -107,7 +107,7 @@ export function WebPagesSection() {
           </div>
         </div>
 
-        {/* Botón de información flotante - SEGUNDA IMAGEN */}
+        {/* Botón de información flotante */}
         <div className="mb-8 flex justify-center">
           <button
             onClick={() => setShowInfoModal(!showInfoModal)}
@@ -135,47 +135,35 @@ export function WebPagesSection() {
           </button>
         </div>
 
-        {/* Modal/Ventana de información (SEGUNDA IMAGEN) - CORREGIDO PARA MÓVIL */}
+        {/* Modal/Ventana de información - CORREGIDO PARA VER TÍTULO COMPLETO */}
         {showInfoModal && (
           <>
-            {/* Overlay oscuro - permite cerrar al hacer clic fuera */}
+            {/* Overlay oscuro */}
             <div 
-              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-black/85 backdrop-blur-sm z-40"
               onClick={() => setShowInfoModal(false)}
-              style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
             />
             
-            {/* Modal centrado - CORREGIDO: z-index más alto y pointer-events: auto */}
-            <div className="fixed inset-0 flex items-center justify-center p-4 z-50 overflow-y-auto">
+            {/* Modal centrado - CON ESPACIO SUPERIOR PARA VER TÍTULO */}
+            <div className="fixed inset-0 flex items-start justify-center p-4 z-50 overflow-y-auto pt-16 sm:pt-20">
               <div 
-                className="relative w-full max-w-2xl rounded-2xl border border-[#eab308]/20 bg-gradient-to-b from-[rgba(20,30,20,0.98)] to-[rgba(10,15,10,0.98)] p-6 sm:p-8 backdrop-blur-sm shadow-2xl"
+                className="relative w-full max-w-2xl rounded-2xl border border-[#eab308]/20 bg-gradient-to-b from-[rgba(20,30,20,0.98)] to-[rgba(10,15,10,0.98)] p-6 sm:p-8 backdrop-blur-sm shadow-2xl mt-8 sm:mt-12"
                 style={{ 
-                  pointerEvents: "auto",
-                  touchAction: "manipulation",
-                  WebkitTapHighlightColor: "transparent",
-                  maxHeight: "90vh",
-                  overflowY: "auto"
+                  maxHeight: "80vh",
+                  overflowY: "auto",
+                  marginTop: "2rem"
                 }}
-                onClick={(e) => e.stopPropagation()} // Evita que el clic en el modal lo cierre
+                onClick={(e) => e.stopPropagation()}
               >
-                {/* Decoración */}
+                {/* Decoración superior */}
                 <div className="absolute left-0 top-0 h-1 w-20 rounded-tl-2xl bg-gradient-to-r from-[#eab308] to-transparent" />
                 <div className="absolute right-0 top-0 h-1 w-20 rounded-tr-2xl bg-gradient-to-l from-[#22c55e] to-transparent" />
 
-                {/* Botón cerrar */}
-                <button
-                  onClick={() => setShowInfoModal(false)}
-                  className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.1)] text-white/80 transition-all hover:bg-[rgba(234,179,8,0.2)] hover:text-[#eab308] z-10"
-                  style={{ minHeight: "40px", minWidth: "40px" }} // Tamaño mínimo para móvil
-                >
-                  ✕
-                </button>
-
-                {/* Contenido de la SEGUNDA IMAGEN */}
-                <div className="space-y-6">
-                  {/* Título principal */}
+                {/* Contenido del modal */}
+                <div className="space-y-6 pt-2">
+                  {/* Título principal - AHORA VISIBLE */}
                   <h3
-                    className="text-center text-2xl font-bold uppercase tracking-wider text-[#eab308] sm:text-3xl pr-8"
+                    className="text-center text-2xl font-bold uppercase tracking-wider text-[#eab308] sm:text-3xl"
                     style={{ fontFamily: "var(--font-orbitron)" }}
                   >
                     ¿Tu marca está lista para el siguiente nivel?
@@ -239,22 +227,40 @@ export function WebPagesSection() {
                     </div>
                   </div>
 
-                  {/* CTA dentro del modal - CORREGIDO PARA MÓVIL */}
+                  {/* Texto adicional "Tú nombró descansar..." */}
+                  <p className="text-center text-lg font-bold text-white italic">
+                    Tú negocio descansa...
+                  </p>
+
+                  {/* Botón X en la parte inferior */}
                   <div className="flex justify-center pt-4">
+                    <button
+                      onClick={() => setShowInfoModal(false)}
+                      className="flex h-14 w-14 items-center justify-center rounded-full bg-[#eab308] text-black font-bold text-3xl shadow-lg hover:bg-[#22c55e] hover:scale-110 transition-all border-2 border-white/20 mx-auto"
+                      style={{
+                        minHeight: "56px",
+                        minWidth: "56px",
+                        cursor: "pointer",
+                        boxShadow: "0 0 25px rgba(234,179,8,0.6)"
+                      }}
+                      aria-label="Cerrar"
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  {/* CTA dentro del modal */}
+                  <div className="flex justify-center pt-4 pb-2">
                     <a
                       href="#contacto"
                       className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#eab308] to-[#22c55e] px-8 py-4 text-sm font-bold uppercase tracking-wider text-[#0a0f0a] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] active:scale-95"
                       style={{ 
-                        pointerEvents: "auto",
-                        cursor: "pointer",
-                        touchAction: "manipulation",
-                        WebkitTapHighlightColor: "transparent",
-                        minWidth: "200px",
-                        minHeight: "50px"
+                        minWidth: "220px",
+                        minHeight: "54px"
                       }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setShowInfoModal(false); // Opcional: cierra el modal al hacer clic
+                        setShowInfoModal(false);
                       }}
                     >
                       <span className="text-lg">🚀</span>
@@ -268,9 +274,9 @@ export function WebPagesSection() {
           </>
         )}
 
-        {/* El resto del contenido - TERCERA IMAGEN */}
+        {/* El resto del contenido */}
         <div className="mt-12">
-          {/* Título modificado - AHORA DICE "POR QUÉ TRABAJAR CON NOSOTROS TU PAGINA WEB?" */}
+          {/* Título modificado */}
           <div className="mb-10">
             <h3
               className="mb-6 text-center text-xl font-bold uppercase tracking-wider sm:text-2xl"
