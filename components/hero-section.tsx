@@ -7,9 +7,13 @@ export function HeroSection() {
     <section
       id="inicio"
       className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-4 pt-28"
+      style={{
+        /* Esta es la clave: difumina los 150px finales de la sección */
+        maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+        WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+      }}
     >
-
-      {/* fondo radial verde */}
+      {/* Fondo radial verde sutil */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -18,135 +22,64 @@ export function HeroSection() {
         }}
       />
 
-      {/* partículas */}
+      {/* Partículas con máscara interna propia para no verse cortadas */}
       <div className="pointer-events-none absolute inset-0 particles" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
-
+        
         {/* TEXTO */}
-        <div className="max-w-xl text-center lg:text-left">
-
+        <div className="max-w-2xl text-center lg:text-left">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#22c55e] sm:text-sm">
             Real Prints for Real People 🖨️🌐
           </p>
 
           <h1
-            className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="mb-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-5xl"
             style={{ fontFamily: "var(--font-orbitron, Rajdhani, sans-serif)" }}
           >
-            POTENCIAMOS
-            <br />
-            TU MARCA
-            <br />
-            EN EL{" "}
-            <span className="text-[#22c55e] drop-shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+            POTENCIAMOS TU MARCA EN EL{" "}
+            <span className="text-[#22c55e] block sm:inline drop-shadow-[0_0_20px_rgba(34,197,94,0.7)]">
               MUNDO REAL Y DIGITAL
             </span>
           </h1>
 
           <p className="mb-6 text-base leading-relaxed text-[#9ca3af]">
-            Somos expertos en soluciones de alto impacto: desde{" "}
-            <span className="text-white font-medium">impresión profesional</span>{" "}
-            y publicidad que se toca, hasta el diseño y creación de{" "}
-            <span className="text-[#22c55e] font-medium">
-              páginas web
-            </span>{" "}
-            para que te encuentren en todo el mundo.
+            Somos expertos en soluciones de alto impacto...
           </p>
 
-          <div className="mb-8 space-y-2 text-sm text-[#9ca3af]">
-
-            <p>
-              🚀{" "}
-              <span className="text-white font-medium">
-                Impulsa tu negocio:
-              </span>{" "}
-              Publicidad, accesorios decorativos y presencia online profesional.
-            </p>
-
-            <p>
-              🎨{" "}
-              <span className="text-white font-medium">
-                Personaliza tu espacio:
-              </span>{" "}
-              Estilo único para tu hogar u oficina.
-            </p>
-
-            <p>
-              <span className="text-white font-medium">
-                Confianza total:
-              </span>{" "}
-              Envíos nacionales 100% seguros con guía de seguimiento.
-            </p>
-
-          </div>
-
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-
             <a
               href="#servicios"
               className="inline-flex items-center justify-center rounded-full bg-[#22c55e] px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-[#0a0f0a] transition-all hover:bg-[#16a34a] hover:shadow-[0_0_35px_rgba(34,197,94,0.5)]"
             >
               Nuestros Servicios
             </a>
-
-            <a
-              href="#paginas-web"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[rgba(234,179,8,0.4)] px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-[#eab308] transition-all hover:border-[#eab308] hover:bg-[rgba(234,179,8,0.08)]"
-            >
-              Obtener Página Web
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="h-4 w-4"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </a>
-
           </div>
         </div>
 
-        {/* LOGO */}
-        <div className="relative flex items-center justify-center">
-
-          {/* glow verde grande */}
+        {/* LOGO CON DIFUMINADO RADIAL */}
+        <div className="relative flex items-center justify-center lg:w-1/2">
           <div
-            className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
+            className="absolute w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] lg:w-[750px] lg:h-[750px] rounded-full blur-3xl"
             style={{
-              background:
-                "radial-gradient(circle, rgba(34,197,94,0.35) 0%, rgba(34,197,94,0.12) 40%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(34,197,94,0.3) 0%, transparent 70%)",
+              maskImage: "radial-gradient(black 30%, transparent 75%)",
+              WebkitMaskImage: "radial-gradient(black 30%, transparent 75%)",
             }}
           />
-
-          {/* fondo oscuro elegante */}
-          <div className="relative rounded-full bg-[radial-gradient(circle,rgba(5,15,5,0.9)_0%,rgba(5,15,5,0.5)_40%,transparent_70%)] p-8 shadow-[0_0_120px_rgba(34,197,94,0.35)]">
-
-            {/* LOGO GRANDE */}
-            <div className="relative h-[320px] w-[320px] sm:h-[420px] sm:w-[420px] lg:h-[520px] lg:w-[520px]">
-
+          <div className="relative z-10">
+            <div className="relative h-[300px] w-[300px] sm:h-[420px] sm:w-[420px] lg:h-[550px] lg:w-[550px]">
               <Image
                 src="/images/logo-printworks.png"
                 alt="PRINTWORKS"
                 fill
-                className="object-contain drop-shadow-[0_0_35px_rgba(34,197,94,0.6)]"
+                className="object-contain drop-shadow-[0_0_40px_rgba(34,197,94,0.5)]"
                 priority
               />
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
-      <div className="absolute right-0 top-1/3 h-px w-1/3 bg-gradient-to-l from-transparent via-[rgba(34,197,94,0.25)] to-transparent" />
-      <div className="absolute bottom-1/4 left-0 h-px w-1/4 bg-gradient-to-r from-transparent via-[rgba(34,197,94,0.15)] to-transparent" />
-
     </section>
   )
 }

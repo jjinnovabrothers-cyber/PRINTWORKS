@@ -2,6 +2,15 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { ChevronDown } from "lucide-react"
+
+const SERVICES_LIST = [
+  { name: "Servicios de Impresión", id: "servicios" },
+  { name: "Material P.O.P", id: "servicios" },
+  { name: "Souvenirs Promocionales", id: "servicios" },
+  { name: "Producción Litográfica", id: "servicios" },
+  { name: "Diseño de Páginas Web", id: "paginas-web" }
+]
 
 const NAV_ITEMS = [
   { id: "inicio", label: "Inicio" },
@@ -11,37 +20,78 @@ const NAV_ITEMS = [
   { id: "contacto", label: "Contacto" },
 ]
 
+// CAMBIO: Se agregó "default" para que coincida con la importación simple
 export function NavbarWrapper() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [isServicesHovered, setIsServicesHovered] = useState(false)
 
   const scrollTo = (id: string) => {
     setMobileOpen(false)
+    setIsServicesHovered(false)
     const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: "smooth" })
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   return (
     <header className="fixed top-8 z-50 w-full border-b border-[rgba(34,197,94,0.12)] bg-[rgba(5,8,5,0.92)] backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
-        <button onClick={() => scrollTo("inicio")} className="relative h-10 w-[180px] shrink-0 sm:w-[220px]" aria-label="Inicio">
-          <Image src="/images/logo-horizontal.png" alt="PRINTWORKS" fill className="object-contain object-left" priority />
+        <button 
+          onClick={() => scrollTo("inicio")} 
+          className="relative h-10 w-[180px] shrink-0 sm:w-[220px]" 
+          aria-label="Inicio"
+        >
+          <Image 
+            src="/images/logo-horizontal.png" 
+            alt="PRINTWORKS" 
+            fill 
+            className="object-contain object-left" 
+            priority 
+          />
         </button>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Navegacion principal">
           {NAV_ITEMS.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className="rounded-full px-4 py-2 text-sm font-medium tracking-wide text-[#d1d5db] transition-colors hover:bg-[rgba(34,197,94,0.08)] hover:text-white"
+            <div 
+              key={item.id} 
+              className="relative h-full flex items-center"
+              onMouseEnter={() => item.id === "servicios" && setIsServicesHovered(true)}
+              onMouseLeave={() => item.id === "servicios" && setIsServicesHovered(false)}
             >
-              {item.label}
-            </button>
+              <button
+                onClick={() => scrollTo(item.id)}
+                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium tracking-wide text-[#d1d5db] transition-colors hover:bg-[rgba(34,197,94,0.08)] hover:text-white"
+              >
+                {item.label}
+                {item.id === "servicios" && (
+                  <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${isServicesHovered ? "rotate-180" : ""}`} />
+                )}
+              </button>
+
+              {item.id === "servicios" && isServicesHovered && (
+                <div className="absolute left-0 top-[100%] w-64 pt-2">
+                  <div className="overflow-hidden rounded-xl border border-[rgba(34,197,94,0.2)] bg-[#0a0f0a] shadow-[0_10px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+                    {SERVICES_LIST.map((service, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => scrollTo(service.id)}
+                        className="block w-full px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9ca3af] transition-all hover:bg-[rgba(34,197,94,0.1)] hover:text-[#22c55e] border-b border-[rgba(34,197,94,0.05)] last:border-0"
+                      >
+                        {service.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
+          
           <a
             href="https://wa.me/573173799589?text=Hola%20PRINTWORKS!%20Quiero%20cotizar%20un%20servicio."
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 rounded-full bg-[#22c55e] px-5 py-2 text-sm font-semibold text-[#0a0f0a] transition-all hover:bg-[#16a34a] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)]"
+            className="ml-4 rounded-full bg-[#22c55e] px-5 py-2 text-sm font-semibold text-[#0a0f0a] transition-all hover:bg-[#16a34a] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)]"
           >
             Cotiza Ahora
           </a>
@@ -55,7 +105,7 @@ export function NavbarWrapper() {
       </div>
 
       {mobileOpen && (
-        <nav className="border-t border-[rgba(34,197,94,0.08)] bg-[rgba(5,8,5,0.98)] px-4 pb-4 pt-2 md:hidden">
+        <nav className="border-t border-[rgba(34,197,94,0.08)] bg-[rgba(5,8,5,0.98)] px-4 pb-6 pt-2 md:hidden">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
@@ -69,7 +119,7 @@ export function NavbarWrapper() {
             href="https://wa.me/573173799589?text=Hola%20PRINTWORKS!%20Quiero%20cotizar%20un%20servicio."
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 block w-full rounded-full bg-[#22c55e] px-5 py-3 text-center text-sm font-semibold text-[#0a0f0a]"
+            className="mt-4 block w-full rounded-full bg-[#22c55e] px-5 py-3 text-center text-sm font-semibold text-[#0a0f0a]"
           >
             Cotiza Ahora
           </a>
