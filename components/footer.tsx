@@ -1,3 +1,6 @@
+"use client"; // Importante: permite que el reloj funcione en el navegador
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const SERVICES_LINKS = [
@@ -10,6 +13,46 @@ const SERVICES_LINKS = [
 ];
 
 export function Footer() {
+  // Estado para manejar el mensaje de apertura/cierre dinámico
+  const [status, setStatus] = useState({ isOpen: false, message: "Verificando horario..." });
+
+  useEffect(() => {
+    const checkStatus = () => {
+      // 1. Obtener la fecha actual y forzar la zona horaria de Colombia
+      const now = new Date();
+      const colombiaTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Bogota" }));
+      
+      const day = colombiaTime.getDay(); // 0 = Domingo, 1 = Lunes...
+      const hour = colombiaTime.getHours();
+      const minutes = colombiaTime.getMinutes();
+      const currentTimeDecimal = hour + minutes / 60;
+
+      // 2. Definir lógica: Lunes(1) a Sábado(6) de 8:00 AM a 6:00 PM (18:00)
+      const isWorkDay = day >= 1 && day <= 6;
+      const isWorkHour = currentTimeDecimal >= 8 && currentTimeDecimal < 18;
+
+      if (isWorkDay && isWorkHour) {
+        setStatus({
+          isOpen: true,
+          message: "Abierto ahora - Cerramos a las 18:00"
+        });
+      } else {
+        let closingMsg = "Cerrado ahora - Abrimos a las 08:00";
+        if (day === 0) closingMsg = "Cerrado hoy - Abrimos el Lunes a las 08:00";
+        
+        setStatus({
+          isOpen: false,
+          message: closingMsg
+        });
+      }
+    };
+
+    // Ejecutar al cargar y actualizar cada minuto
+    checkStatus();
+    const timer = setInterval(checkStatus, 60000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <footer
       id="contacto"
@@ -59,18 +102,11 @@ export function Footer() {
               publicidad visual para tu negocio en Cali, Colombia.
             </p>
 
-            {/* Redes sociales (opcional, puedes agregar) */}
             <div className="mt-4 flex gap-3">
-              <a
-                href="#"
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(34,197,94,0.2)] text-[#9ca3af] transition-colors hover:border-[#22c55e] hover:text-[#22c55e]"
-              >
+              <a href="#" className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(34,197,94,0.2)] text-[#9ca3af] transition-colors hover:border-[#22c55e] hover:text-[#22c55e]">
                 <span className="text-sm">📘</span>
               </a>
-              <a
-                href="#"
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(34,197,94,0.2)] text-[#9ca3af] transition-colors hover:border-[#22c55e] hover:text-[#22c55e]"
-              >
+              <a href="#" className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(34,197,94,0.2)] text-[#9ca3af] transition-colors hover:border-[#22c55e] hover:text-[#22c55e]">
                 <span className="text-sm">📷</span>
               </a>
             </div>
@@ -81,7 +117,6 @@ export function Footer() {
             <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
               Servicios
             </h4>
-
             <ul className="flex flex-col gap-2">
               {SERVICES_LINKS.map((s) => (
                 <li key={s}>
@@ -98,13 +133,11 @@ export function Footer() {
             <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
               Contacto
             </h4>
-
             <ul className="flex flex-col gap-3">
               <li className="flex items-start gap-2 text-xs text-[#9ca3af]">
                 <span className="mt-0.5">📍</span>
                 <span>Cali, Colombia</span>
               </li>
-
               <li className="flex items-start gap-2 text-xs text-[#9ca3af]">
                 <span className="mt-0.5">📞</span>
                 <div className="flex flex-col">
@@ -112,7 +145,6 @@ export function Footer() {
                   <span className="text-[#6b7280]">(WhatsApp)</span>
                 </div>
               </li>
-
               <li className="flex items-start gap-2 text-xs text-[#9ca3af]">
                 <span className="mt-0.5">📧</span>
                 <span>info@printworks.co</span>
@@ -120,56 +152,40 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Schedule - HORARIOS DETALLADOS como en la imagen */}
+          {/* Schedule - DINÁMICO */}
           <div>
             <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
               Horario comercial
             </h4>
 
             <div className="rounded-lg border border-[rgba(34,197,94,0.15)] bg-[rgba(34,197,94,0.03)] p-4">
-              <p className="mb-3 text-xs font-medium text-[#eab308]">
-                ⏰ Abierto en horario específico
+              <p className={`mb-3 text-xs font-medium ${status.isOpen ? 'text-[#eab308]' : 'text-[#ef4444]'}`}>
+                {status.isOpen ? "⏰ Abierto en horario específico" : "⏰ Cerrado actualmente"}
               </p>
 
               <ul className="space-y-2 text-xs">
-                <li className="flex justify-between text-[#9ca3af]">
-                  <span className="font-medium text-white">Lunes</span>
-                  <span>9:00 - 18:00</span>
-                </li>
-                <li className="flex justify-between text-[#9ca3af]">
-                  <span className="font-medium text-white">Martes</span>
-                  <span>9:00 - 18:00</span>
-                </li>
-                <li className="flex justify-between text-[#9ca3af]">
-                  <span className="font-medium text-white">Miércoles</span>
-                  <span>9:00 - 18:00</span>
-                </li>
-                <li className="flex justify-between text-[#9ca3af]">
-                  <span className="font-medium text-white">Jueves</span>
-                  <span>9:00 - 18:00</span>
-                </li>
-                <li className="flex justify-between text-[#9ca3af]">
-                  <span className="font-medium text-white">Viernes</span>
-                  <span>9:00 - 18:00</span>
-                </li>
-                <li className="flex justify-between text-[#9ca3af]">
-                  <span className="font-medium text-white">Sábado</span>
-                  <span>10:00 - 14:00</span>
-                </li>
+                {["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"].map((dia) => (
+                   <li key={dia} className="flex justify-between text-[#9ca3af]">
+                    <span className="font-medium text-white">{dia}</span>
+                    <span>8:00 - 06:00pm</span>
+                  </li>
+                ))}
                 <li className="flex justify-between border-t border-[rgba(34,197,94,0.15)] pt-2 text-[#9ca3af]">
                   <span className="font-medium text-white">Domingo</span>
                   <span className="text-[#ef4444]">Cerrado</span>
                 </li>
               </ul>
 
-              {/* Indicador de estado actual (opcional) */}
-              <div className="mt-3 flex items-center gap-2 rounded-full bg-[rgba(34,197,94,0.1)] px-3 py-1.5">
+              {/* Indicador visual de estado */}
+              <div className={`mt-3 flex items-center gap-2 rounded-full px-3 py-1.5 ${status.isOpen ? 'bg-[rgba(34,197,94,0.1)]' : 'bg-[rgba(239,68,68,0.1)]'}`}>
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#22c55e]"></span>
+                  {status.isOpen && (
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-75"></span>
+                  )}
+                  <span className={`relative inline-flex h-2 w-2 rounded-full ${status.isOpen ? 'bg-[#22c55e]' : 'bg-[#ef4444]'}`}></span>
                 </span>
-                <span className="text-[10px] font-medium text-[#22c55e]">
-                  Abierto ahora - Cerramos a las 18:00
+                <span className={`text-[10px] font-medium ${status.isOpen ? 'text-[#22c55e]' : 'text-[#ef4444]'}`}>
+                  {status.message}
                 </span>
               </div>
             </div>
