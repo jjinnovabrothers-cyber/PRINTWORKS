@@ -22,10 +22,10 @@ const FrameIcon = () => (
 const SERVICES: Service[] = [
 
 {
-id: 1,
-title: "Impresión Offset (Litográfica)",
-icon: <BookIcon />,
-description: "Producción litográfica offset de alto volumen con acabados premium.",
+    id: 1,
+    title: "Impresión Offset (Litográfica)",
+    icon: <CartIcon />, // <--- CAMBIADO: Ahora tiene el carrito
+    description: "Producción litográfica offset de alto volumen con acabados premium.",
 coverImage: "/images/products/litografia.jpg",
 whatsappMsg: "Hola PRINTWORKS! Quiero cotizar impresión offset.",
 items: [
@@ -42,9 +42,9 @@ items: [
 },
 
 {
-id: 2,
-title: "Impresión Digital (Gran Formato)",
-icon: <PrinterIcon />,
+    id: 2,
+    title: "Impresión Digital (Gran Formato)",
+    icon: <PrinterIcon />,
 description: "Impresión digital en gran formato para publicidad exterior y visibilidad de marca.",
 coverImage: "/images/products/pendones.jpg",
 whatsappMsg: "Hola PRINTWORKS! Quiero cotizar impresión digital.",
@@ -60,10 +60,10 @@ items: [
 },
 
 {
-id: 3,
-title: "Souvenirs Promocionales",
-icon: <GiftIcon />,
-description: "Artículos personalizados que dejan huella para promocionar tu marca.",
+    id: 3,
+    title: "Souvenirs Promocionales",
+    icon: <CartIcon />, // <--- CAMBIADO: Ahora tiene el carrito
+    description: "Artículos personalizados que dejan huella para promocionar tu marca.",
 coverImage: "/images/products/mugs-real.jpg",
 whatsappMsg: "Hola PRINTWORKS! Quiero cotizar souvenirs promocionales.",
 items: [
@@ -79,9 +79,9 @@ items: [
 },
 
 {
-id: 4,
-title: "Material P.O.P",
-icon: <TagIcon />,
+    id: 4,
+    title: "Material P.O.P",
+    icon: <TagIcon />,
 description: "Material publicitario en punto de venta que impulsa tus ventas.",
 coverImage: "/images/products/material-pop.jpg",
 whatsappMsg: "Hola PRINTWORKS! Quiero cotizar material POP.",
@@ -97,9 +97,9 @@ items: [
 
 {
 id: 5,
-title: "DISEÑO DE PAGINAS WEB",
-icon: <CartIcon />,
-description: "Soluciones tecnológicas avanzadas para empresas que buscan escalar su negocio con infraestructura digital segura, automatización e inteligencia artificial.",
+    title: "DISEÑO DE PAGINAS WEB",
+    icon: <BookIcon />, // <--- CAMBIADO: Referente a contenido/web (puedes usar BookIcon o PrinterIcon)
+    description: "Soluciones tecnológicas avanzadas para empresas que buscan escalar su negocio con infraestructura digital segura, automatización e inteligencia artificial.",
 coverImage: "/images/products/ecommerce.jpg",
 whatsappMsg: "Hola PRINTWORKS! Quiero cotizar servicios de ingeniería y desarrollo.",
 items: [
@@ -115,10 +115,10 @@ items: [
 },
 
 {
-id: 6,
-title: "Cuadros Decorativos",
-icon: <FrameIcon />,
-description: "Decoración personalizada para hogares y oficinas con impresión artística.",
+    id: 6,
+    title: "Cuadros Decorativos",
+    icon: <CartIcon />, // <--- CAMBIADO: Ahora tiene el carrito
+    description: "Decoración personalizada para hogares y oficinas con impresión artística.",
 coverImage: "/images/products/cuadro-anime.jpg",
 whatsappMsg: "Hola PRINTWORKS! Quiero cotizar cuadros decorativos.",
 items: [
