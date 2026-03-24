@@ -49,7 +49,7 @@ export function ServiceCard({ title, icon, description, items, whatsappMessage }
       {/* Expanded content */}
       <div
         className={`relative z-10 overflow-hidden transition-all duration-500 ease-in-out ${
-          isExpanded ? "mt-4 max-h-[600px] opacity-100" : "mt-0 max-h-0 opacity-0"
+          isExpanded ? "mt-4 max-h-150 opacity-100" : "mt-0 max-h-0 opacity-0"
         }`}
       >
         <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">

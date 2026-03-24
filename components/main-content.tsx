@@ -113,12 +113,12 @@ function Lightbox({ images, idx, onClose, onPrev, onNext }: { images: { name: st
   }, [onClose, onPrev, onNext])
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md" onClick={onClose}>
+    <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/90 backdrop-blur-md" onClick={onClose}>
       <div className="relative max-h-[85vh] max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
         <button onClick={onClose} className="absolute -right-3 -top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(34,197,94,0.4)] bg-[#0d1a0d] text-white hover:bg-[rgba(34,197,94,0.2)]" aria-label="Cerrar">
           <X className="h-5 w-5" />
         </button>
-        <div className="relative h-[70vh] w-[80vw] max-w-[700px]">
+        <div className="relative h-[70vh] w-[80vw] max-w-175">
           <Image src={images[idx].image} alt={images[idx].name} fill className="rounded-xl object-contain" />
         </div>
         <p className="mt-3 text-center text-sm font-semibold tracking-wider" style={{ color: "#eab308" }}>{images[idx].name}</p>

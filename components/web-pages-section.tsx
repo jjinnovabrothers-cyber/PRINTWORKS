@@ -18,10 +18,10 @@ export function WebPagesSection() {
       />
 
       <div className="relative z-10 mx-auto max-w-4xl">
-        {/* EJEMPLOS DE PÁGINAS WEB */}
+        {/* DISEÑAMOS TU PÁGINAS WEB */}
         <div className="mb-12 text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#22c55e] sm:text-sm">
-            EJEMPLOS DE PÁGINAS WEB
+            DISEÑAMOS TU PÁGINAS WEB
           </p>
           <h2
             className="mb-8 text-2xl font-bold uppercase leading-tight tracking-wider text-white sm:text-3xl md:text-4xl"
@@ -113,7 +113,7 @@ export function WebPagesSection() {
             onClick={() => setShowInfoModal(!showInfoModal)}
             className="group relative inline-flex items-center gap-3 rounded-full border border-[#eab308]/30 bg-[rgba(10,20,10,0.8)] px-8 py-4 transition-all hover:border-[#eab308] hover:shadow-[0_0_30px_rgba(234,179,8,0.2)]"
           >
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#eab308]/0 via-[#eab308]/10 to-[#eab308]/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <span className="absolute inset-0 rounded-full bg-linear-to-r from-[#eab308]/0 via-[#eab308]/10 to-[#eab308]/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#eab308]/20 text-xl">
               💡
             </span>
@@ -147,7 +147,7 @@ export function WebPagesSection() {
             {/* Modal centrado - CON ESPACIO SUPERIOR PARA VER TÍTULO */}
             <div className="fixed inset-0 flex items-start justify-center p-4 z-50 overflow-y-auto pt-16 sm:pt-20">
               <div 
-                className="relative w-full max-w-2xl rounded-2xl border border-[#eab308]/20 bg-gradient-to-b from-[rgba(20,30,20,0.98)] to-[rgba(10,15,10,0.98)] p-6 sm:p-8 backdrop-blur-sm shadow-2xl mt-8 sm:mt-12"
+                className="relative w-full max-w-2xl rounded-2xl border border-[#eab308]/20 bg-linear-to-b from-[rgba(20,30,20,0.98)] to-[rgba(10,15,10,0.98)] p-6 sm:p-8 backdrop-blur-sm shadow-2xl mt-8 sm:mt-12"
                 style={{ 
                   maxHeight: "80vh",
                   overflowY: "auto",
@@ -156,8 +156,8 @@ export function WebPagesSection() {
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Decoración superior */}
-                <div className="absolute left-0 top-0 h-1 w-20 rounded-tl-2xl bg-gradient-to-r from-[#eab308] to-transparent" />
-                <div className="absolute right-0 top-0 h-1 w-20 rounded-tr-2xl bg-gradient-to-l from-[#22c55e] to-transparent" />
+                <div className="absolute left-0 top-0 h-1 w-20 rounded-tl-2xl bg-linear-to-r from-[#eab308] to-transparent" />
+                <div className="absolute right-0 top-0 h-1 w-20 rounded-tr-2xl bg-linear-to-l from-[#22c55e] to-transparent" />
 
                 {/* Contenido del modal */}
                 <div className="space-y-6 pt-2">
@@ -253,7 +253,7 @@ export function WebPagesSection() {
                   <div className="flex justify-center pt-4 pb-2">
                     <a
                       href="#contacto"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#eab308] to-[#22c55e] px-8 py-4 text-sm font-bold uppercase tracking-wider text-[#0a0f0a] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] active:scale-95"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-r from-[#eab308] to-[#22c55e] px-8 py-4 text-sm font-bold uppercase tracking-wider text-[#0a0f0a] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] active:scale-95"
                       style={{ 
                         minWidth: "220px",
                         minHeight: "54px"
@@ -330,7 +330,7 @@ export function WebPagesSection() {
 
           {/* Bottom CTA */}
           <div className="text-center">
-            <div className="inline-block rounded-2xl border border-[rgba(34,197,94,0.2)] bg-gradient-to-b from-[rgba(34,197,94,0.05)] to-transparent p-6">
+            <div className="inline-block rounded-2xl border border-[rgba(34,197,94,0.2)] bg-linear-to-b from-[rgba(34,197,94,0.05)] to-transparent p-6">
               <p className="mb-2 text-base font-bold text-white sm:text-lg">
                 Es hora de que tu negocio trabaje mientras tú descansas
               </p>

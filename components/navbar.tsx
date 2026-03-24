@@ -23,7 +23,7 @@ export function Navbar({ onOpenService }: { onOpenService: (id: number) => void 
     <header className="fixed top-0 z-50 w-full border-b border-[rgba(34,197,94,0.15)] bg-[rgba(5,8,5,0.92)] backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
         {/* Logo horizontal */}
-        <button onClick={() => scrollTo("inicio")} className="relative h-10 w-[180px] shrink-0 sm:w-[220px]" aria-label="Inicio">
+        <button onClick={() => scrollTo("inicio")} className="relative h-10 w-45 shrink-0 sm:w-55" aria-label="Inicio">
           <Image src="/images/logo-horizontal.png" alt="PRINTWORKS" fill className="object-contain object-left" priority />
         </button>
 

@@ -39,7 +39,7 @@ export function NavbarWrapper() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
         <button 
           onClick={() => scrollTo("inicio")} 
-          className="relative h-10 w-[180px] shrink-0 sm:w-[220px]" 
+          className="relative h-10 w-45 shrink-0 sm:w-55" 
           aria-label="Inicio"
         >
           <Image 
@@ -70,7 +70,7 @@ export function NavbarWrapper() {
               </button>
 
               {item.id === "servicios" && isServicesHovered && (
-                <div className="absolute left-0 top-[100%] w-64 pt-2">
+                <div className="absolute left-0 top-full w-64 pt-2">
                   <div className="overflow-hidden rounded-xl border border-[rgba(34,197,94,0.2)] bg-[#0a0f0a] shadow-[0_10px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl">
                     {SERVICES_LIST.map((service, idx) => (
                       <button

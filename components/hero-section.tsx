@@ -44,8 +44,25 @@ export function HeroSection() {
           </h1>
 
           <p className="mb-6 text-base leading-relaxed text-[#9ca3af]">
-            Somos expertos en soluciones de alto impacto...
+            Somos expertos en soluciones de alto impacto: desde <strong>impresión profesional</strong> y 
+            publicidad que es palpable, hasta el diseño y creación de <span className="text-[#22c55e]">páginas web</span> para que te 
+            encuentren en todo el mundo.
           </p>
+
+          <div className="mb-8 flex flex-col gap-3 text-left lg:items-start">
+            <div className="flex items-start gap-2 text-sm text-[#9ca3af]">
+              <span className="mt-1">🚀</span>
+              <p><strong>Impulsa tu negocio:</strong> Publicidad, accesorios decorativos y presencia online profesional.</p>
+            </div>
+            <div className="flex items-start gap-2 text-sm text-[#9ca3af]">
+              <span className="mt-1">🎨</span>
+              <p><strong>Personaliza tu espacio:</strong> Estilo único para tu hogar u oficina.</p>
+            </div>
+            <div className="flex items-start gap-2 text-sm text-[#9ca3af]">
+              <span className="mt-1">✅</span>
+              <p><strong>Confianza total:</strong> Envíos nacionales 100% seguros con guía de seguimiento.</p>
+            </div>
+          </div>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <a
@@ -60,7 +77,7 @@ export function HeroSection() {
         {/* LOGO CON DIFUMINADO RADIAL */}
         <div className="relative flex items-center justify-center lg:w-1/2">
           <div
-            className="absolute w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] lg:w-[750px] lg:h-[750px] rounded-full blur-3xl"
+            className="absolute w-100 h-100 sm:w-150 sm:h-150 lg:w-187.5 lg:h-187.5 rounded-full blur-3xl"
             style={{
               background: "radial-gradient(circle, rgba(34,197,94,0.3) 0%, transparent 70%)",
               maskImage: "radial-gradient(black 30%, transparent 75%)",
@@ -68,7 +85,7 @@ export function HeroSection() {
             }}
           />
           <div className="relative z-10">
-            <div className="relative h-[300px] w-[300px] sm:h-[420px] sm:w-[420px] lg:h-[550px] lg:w-[550px]">
+            <div className="relative h-75 w-75 sm:h-105 sm:w-105 lg:h-137.5 lg:w-137.5">
               <Image
                 src="/images/logo-printworks.png"
                 alt="PRINTWORKS"

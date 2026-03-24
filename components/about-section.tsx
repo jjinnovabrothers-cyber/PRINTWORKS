@@ -17,7 +17,7 @@ export function AboutSection() {
           <h2 className="font-sans text-2xl font-bold tracking-widest text-[#e8f5e8] md:text-4xl">
             QUIENES <span className="text-[#22c55e]">SOMOS</span>
           </h2>
-          <div className="mx-auto mt-3 h-px w-24 bg-gradient-to-r from-transparent via-[#22c55e] to-transparent" />
+          <div className="mx-auto mt-3 h-px w-24 bg-linear-to-r from-transparent via-[#22c55e] to-transparent" />
         </div>
 
         {/* Content */}

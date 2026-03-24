@@ -88,7 +88,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <div className="relative mb-4 h-10 w-[180px]">
+            <div className="relative mb-4 h-10 w-45">
               <Image
                 src="/images/logo-horizontal.png"
                 alt="PRINTWORKS"

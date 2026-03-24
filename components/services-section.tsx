@@ -138,7 +138,7 @@ function Lightbox({ images, index, onClose, onPrev, onNext }: { images: ServiceI
   }, [onClose, onPrev, onNext])
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-70 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={onClose}>
       <div className="relative max-h-[85vh] max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
         <Image src={images[index].image} alt={images[index].name} width={900} height={600} className="max-h-[80vh] w-auto rounded-lg object-contain" style={{ width: "auto", height: "auto" }} />
         <p className="mt-3 text-center text-sm font-medium text-white">{images[index].name}</p>
@@ -186,7 +186,7 @@ function ServiceModal({ service, onClose }: { service: Service; onClose: () => v
 
         <div className="relative h-48 w-full overflow-hidden rounded-t-2xl sm:h-56">
           <Image src={service.coverImage} alt={service.title} fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a0d] via-[rgba(13,26,13,0.4)] to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#0d1a0d] via-[rgba(13,26,13,0.4)] to-transparent" />
           <div className="absolute bottom-4 left-5 flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(34,197,94,0.15)] text-[#22c55e] backdrop-blur-sm">{service.icon}</div>
             <h2 className="text-xl font-bold uppercase tracking-wider text-white sm:text-2xl" style={{ fontFamily: "var(--font-orbitron)" }}>{service.title}</h2>
@@ -235,7 +235,7 @@ function ServiceCard({ service, onOpen }: { service: Service; onOpen: () => void
     <button onClick={onOpen} className="group relative flex flex-col overflow-hidden rounded-2xl border border-[rgba(34,197,94,0.12)] bg-[rgba(10,20,10,0.5)] text-left transition-all duration-300 hover:border-[#22c55e] hover:shadow-[0_0_30px_rgba(34,197,94,0.1)] hover:-translate-y-1">
       <div className="relative h-44 w-full overflow-hidden">
         <Image src={service.coverImage} alt={service.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0a] via-[rgba(10,15,10,0.3)] to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0a0f0a] via-[rgba(10,15,10,0.3)] to-transparent" />
         <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[rgba(34,197,94,0.2)] text-[#22c55e] backdrop-blur-sm">{service.icon}</div>
       </div>
       <div className="flex flex-1 flex-col p-4">
@@ -257,7 +257,6 @@ export function ServicesSection() {
     <section id="servicios" className="relative px-4 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="mb-14 text-center">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#22c55e]">Lo que hacemos</p>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl" style={{ fontFamily: "var(--font-orbitron)" }}>
             Nuestros <span className="text-[#22c55e]">Servicios</span>
           </h2>

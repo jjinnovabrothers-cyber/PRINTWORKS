@@ -13,7 +13,7 @@ export function AnnouncementBar() {
   const repeatedMessages = [...messages, ...messages]
 
   return (
-    <div className="fixed top-0 z-[60] w-full overflow-hidden border-b border-[rgba(34,197,94,0.2)]" style={{ backgroundColor: "rgba(5,8,5,0.97)" }}>
+    <div className="fixed top-0 z-60 w-full overflow-hidden border-b border-[rgba(34,197,94,0.2)]" style={{ backgroundColor: "rgba(5,8,5,0.97)" }}>
       <div className="flex h-8 items-center">
         <div className="animate-marquee flex whitespace-nowrap">
           {repeatedMessages.map((msg, i) => (

@@ -32,7 +32,7 @@ export function WhyUsSection() {
             style={{ background: "radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 60%)" }}
             aria-hidden="true"
           />
-          <div className="relative h-[220px] w-[220px] sm:h-[280px] sm:w-[280px] lg:h-[340px] lg:w-[340px]">
+          <div className="relative h-55 w-55 sm:h-70 sm:w-70 lg:h-85 lg:w-85">
             <Image src="/images/logo-symbol.png" alt="PRINTWORKS" fill className="object-contain drop-shadow-[0_0_40px_rgba(34,197,94,0.1)]" />
           </div>
         </div>
