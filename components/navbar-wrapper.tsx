@@ -5,11 +5,12 @@ import Image from "next/image"
 import { ChevronDown } from "lucide-react"
 
 const SERVICES_LIST = [
-  { name: "Servicios de Impresión", id: "servicios" },
-  { name: "Material P.O.P", id: "servicios" },
-  { name: "Souvenirs Promocionales", id: "servicios" },
-  { name: "Producción Litográfica", id: "servicios" },
-  { name: "Diseño de Páginas Web", id: "paginas-web" }
+  { name: "Impresion Offset (Litografica)", serviceId: 1 },
+  { name: "Impresion Digital (Gran Formato)", serviceId: 2 },
+  { name: "Souvenirs Promocionales", serviceId: 3 },
+  { name: "Material P.O.P", serviceId: 4 },
+  { name: "Diseno de Paginas Web", serviceId: 5 },
+  { name: "Cuadros Decorativos", serviceId: 6 }
 ]
 
 const NAV_ITEMS = [
@@ -20,7 +21,6 @@ const NAV_ITEMS = [
   { id: "contacto", label: "Contacto" },
 ]
 
-// CAMBIO: Se agregó "default" para que coincida con la importación simple
 export function NavbarWrapper() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isServicesHovered, setIsServicesHovered] = useState(false)
@@ -31,6 +31,23 @@ export function NavbarWrapper() {
     const el = document.getElementById(id)
     if (el) {
       el.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  const openService = (serviceId: number) => {
+    setMobileOpen(false)
+    setIsServicesHovered(false)
+    // Primero navegar a servicios
+    const el = document.getElementById("servicios")
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" })
+      // Esperar a que termine el scroll y luego abrir el modal
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent("openService", { detail: { serviceId } }))
+      }, 600)
+    } else {
+      // Si no hay elemento, disparar el evento directamente
+      window.dispatchEvent(new CustomEvent("openService", { detail: { serviceId } }))
     }
   }
 
@@ -75,7 +92,7 @@ export function NavbarWrapper() {
                     {SERVICES_LIST.map((service, idx) => (
                       <button
                         key={idx}
-                        onClick={() => scrollTo(service.id)}
+                        onClick={() => openService(service.serviceId)}
                         className="block w-full px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9ca3af] transition-all hover:bg-[rgba(34,197,94,0.1)] hover:text-[#22c55e] border-b border-[rgba(34,197,94,0.05)] last:border-0"
                       >
                         {service.name}

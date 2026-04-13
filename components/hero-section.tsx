@@ -8,12 +8,10 @@ export function HeroSection() {
       id="inicio"
       className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-4 pt-28"
       style={{
-        /* Esta es la clave: difumina los 150px finales de la sección */
         maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
         WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
       }}
     >
-      {/* Fondo radial verde sutil */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -22,15 +20,13 @@ export function HeroSection() {
         }}
       />
 
-      {/* Partículas con máscara interna propia para no verse cortadas */}
       <div className="pointer-events-none absolute inset-0 particles" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
         
-        {/* TEXTO */}
         <div className="max-w-2xl text-center lg:text-left">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#22c55e] sm:text-sm">
-            Real Prints for Real People 🖨️🌐
+            Real Prints for Real People
           </p>
 
           <h1
@@ -44,23 +40,23 @@ export function HeroSection() {
           </h1>
 
           <p className="mb-6 text-base leading-relaxed text-[#9ca3af]">
-            Somos expertos en soluciones de alto impacto: desde <strong>impresión profesional</strong> y 
-            publicidad que es palpable, hasta el diseño y creación de <span className="text-[#22c55e]">páginas web</span> para que te 
+            Somos expertos en soluciones de alto impacto: desde <strong>impresion profesional</strong> y 
+            publicidad que es palpable, hasta el diseno y creacion de <span className="text-[#22c55e]">paginas web</span> para que te 
             encuentren en todo el mundo.
           </p>
 
           <div className="mb-8 flex flex-col gap-3 text-left lg:items-start">
             <div className="flex items-start gap-2 text-sm text-[#9ca3af]">
-              <span className="mt-1">🚀</span>
+              <span className="mt-1 text-[#22c55e]">*</span>
               <p><strong>Impulsa tu negocio:</strong> Publicidad, accesorios decorativos y presencia online profesional.</p>
             </div>
             <div className="flex items-start gap-2 text-sm text-[#9ca3af]">
-              <span className="mt-1">🎨</span>
-              <p><strong>Personaliza tu espacio:</strong> Estilo único para tu hogar u oficina.</p>
+              <span className="mt-1 text-[#22c55e]">*</span>
+              <p><strong>Personaliza tu espacio:</strong> Estilo unico para tu hogar u oficina.</p>
             </div>
             <div className="flex items-start gap-2 text-sm text-[#9ca3af]">
-              <span className="mt-1">✅</span>
-              <p><strong>Confianza total:</strong> Envíos nacionales 100% seguros con guía de seguimiento.</p>
+              <span className="mt-1 text-[#22c55e]">*</span>
+              <p><strong>Confianza total:</strong> Envios nacionales 100% seguros con guia de seguimiento.</p>
             </div>
           </div>
 
@@ -74,10 +70,9 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* LOGO CON DIFUMINADO RADIAL */}
         <div className="relative flex items-center justify-center lg:w-1/2">
           <div
-            className="absolute w-100 h-100 sm:w-150 sm:h-150 lg:w-187.5 lg:h-187.5 rounded-full blur-3xl"
+            className="absolute w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] lg:w-[750px] lg:h-[750px] rounded-full blur-3xl"
             style={{
               background: "radial-gradient(circle, rgba(34,197,94,0.3) 0%, transparent 70%)",
               maskImage: "radial-gradient(black 30%, transparent 75%)",
@@ -85,7 +80,7 @@ export function HeroSection() {
             }}
           />
           <div className="relative z-10">
-            <div className="relative h-75 w-75 sm:h-105 sm:w-105 lg:h-137.5 lg:w-137.5">
+            <div className="relative h-[300px] w-[300px] sm:h-[420px] sm:w-[420px] lg:h-[550px] lg:w-[550px]">
               <Image
                 src="/images/logo-printworks.png"
                 alt="PRINTWORKS"

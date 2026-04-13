@@ -1,64 +1,59 @@
-"use client"; // Importante: permite que el reloj funcione en el navegador
+"use client"
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react"
+import Image from "next/image"
 
 const SERVICES_LINKS = [
-  "Impresión Offset (Litográfica)",
-  "Impresión Digital (gran formato)",
+  "Impresion Offset (Litografica)",
+  "Impresion Digital (gran formato)",
   "Souvenirs Promocionales",
   "Material P.O.P",
-  "diseño de paginas web",
+  "Diseno de paginas web",
   "Cuadros Decorativos",
-];
+]
 
 export function Footer() {
-  // Estado para manejar el mensaje de apertura/cierre dinámico
-  const [status, setStatus] = useState({ isOpen: false, message: "Verificando horario..." });
+  const [status, setStatus] = useState({ isOpen: false, message: "Verificando horario..." })
 
   useEffect(() => {
     const checkStatus = () => {
-      // 1. Obtener la fecha actual y forzar la zona horaria de Colombia
-      const now = new Date();
-      const colombiaTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Bogota" }));
+      const now = new Date()
+      const colombiaTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Bogota" }))
       
-      const day = colombiaTime.getDay(); // 0 = Domingo, 1 = Lunes...
-      const hour = colombiaTime.getHours();
-      const minutes = colombiaTime.getMinutes();
-      const currentTimeDecimal = hour + minutes / 60;
+      const day = colombiaTime.getDay()
+      const hour = colombiaTime.getHours()
+      const minutes = colombiaTime.getMinutes()
+      const currentTimeDecimal = hour + minutes / 60
 
-      // 2. Definir lógica: Lunes(1) a Sábado(6) de 8:00 AM a 6:00 PM (18:00)
-      const isWorkDay = day >= 1 && day <= 6;
-      const isWorkHour = currentTimeDecimal >= 8 && currentTimeDecimal < 18;
+      const isWorkDay = day >= 1 && day <= 6
+      const isWorkHour = currentTimeDecimal >= 8 && currentTimeDecimal < 18
 
       if (isWorkDay && isWorkHour) {
         setStatus({
           isOpen: true,
           message: "Abierto ahora - Cerramos a las 18:00"
-        });
+        })
       } else {
-        let closingMsg = "Cerrado ahora - Abrimos a las 08:00";
-        if (day === 0) closingMsg = "Cerrado hoy - Abrimos el Lunes a las 08:00";
+        let closingMsg = "Cerrado ahora - Abrimos a las 08:00"
+        if (day === 0) closingMsg = "Cerrado hoy - Abrimos el Lunes a las 08:00"
         
         setStatus({
           isOpen: false,
           message: closingMsg
-        });
+        })
       }
-    };
+    }
 
-    // Ejecutar al cargar y actualizar cada minuto
-    checkStatus();
-    const timer = setInterval(checkStatus, 60000);
-    return () => clearInterval(timer);
-  }, []);
+    checkStatus()
+    const timer = setInterval(checkStatus, 60000)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <footer
       id="contacto"
       className="border-t border-[rgba(34,197,94,0.15)] bg-[rgba(5,8,5,0.95)]"
     >
-      {/* CTA Banner */}
       <div className="border-b border-[rgba(34,197,94,0.1)] px-4 py-12 text-center">
         <h3
           className="mb-3 text-2xl font-bold text-white sm:text-3xl"
@@ -68,7 +63,7 @@ export function Footer() {
         </h3>
 
         <p className="mx-auto mb-6 max-w-lg text-sm text-[#9ca3af]">
-          Nuestro equipo está listo para apoyarte en tus proyectos. Creamos la
+          Nuestro equipo esta listo para apoyarte en tus proyectos. Creamos la
           mejor oferta para tu requerimiento.
         </p>
 
@@ -78,17 +73,14 @@ export function Footer() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-[#22c55e] px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-[#0a0f0a] transition-all hover:bg-[#16a34a] hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]"
         >
-          <span className="text-base">📱</span>
           Hablar por WhatsApp
         </a>
       </div>
 
-      {/* Footer content */}
       <div className="mx-auto max-w-7xl px-4 py-10 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
           <div>
-            <div className="relative mb-4 h-10 w-45">
+            <div className="relative mb-4 h-10 w-[180px]">
               <Image
                 src="/images/logo-horizontal.png"
                 alt="PRINTWORKS"
@@ -98,21 +90,20 @@ export function Footer() {
             </div>
 
             <p className="text-xs leading-relaxed text-[#9ca3af]">
-              Real Prints for Real People. Soluciones integrales de impresión y
+              Real Prints for Real People. Soluciones integrales de impresion y
               publicidad visual para tu negocio en Cali, Colombia.
             </p>
 
             <div className="mt-4 flex gap-3">
               <a href="#" className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(34,197,94,0.2)] text-[#9ca3af] transition-colors hover:border-[#22c55e] hover:text-[#22c55e]">
-                <span className="text-sm">📘</span>
+                <span className="text-sm">f</span>
               </a>
               <a href="#" className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(34,197,94,0.2)] text-[#9ca3af] transition-colors hover:border-[#22c55e] hover:text-[#22c55e]">
-                <span className="text-sm">📷</span>
+                <span className="text-sm">ig</span>
               </a>
             </div>
           </div>
 
-          {/* Services */}
           <div>
             <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
               Servicios
@@ -128,31 +119,29 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
               Contacto
             </h4>
             <ul className="flex flex-col gap-3">
               <li className="flex items-start gap-2 text-xs text-[#9ca3af]">
-                <span className="mt-0.5">📍</span>
+                <span className="mt-0.5 text-[#22c55e]">*</span>
                 <span>Cali, Colombia</span>
               </li>
               <li className="flex items-start gap-2 text-xs text-[#9ca3af]">
-                <span className="mt-0.5">📞</span>
+                <span className="mt-0.5 text-[#22c55e]">*</span>
                 <div className="flex flex-col">
                   <span>+57 317 3799589</span>
                   <span className="text-[#6b7280]">(WhatsApp)</span>
                 </div>
               </li>
               <li className="flex items-start gap-2 text-xs text-[#9ca3af]">
-                <span className="mt-0.5">📧</span>
+                <span className="mt-0.5 text-[#22c55e]">*</span>
                 <span>info@printworks.co</span>
               </li>
             </ul>
           </div>
 
-          {/* Schedule - DINÁMICO */}
           <div>
             <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
               Horario comercial
@@ -160,11 +149,11 @@ export function Footer() {
 
             <div className="rounded-lg border border-[rgba(34,197,94,0.15)] bg-[rgba(34,197,94,0.03)] p-4">
               <p className={`mb-3 text-xs font-medium ${status.isOpen ? 'text-[#eab308]' : 'text-[#ef4444]'}`}>
-                {status.isOpen ? "⏰ Abierto en horario específico" : "⏰ Cerrado actualmente"}
+                {status.isOpen ? "Abierto en horario especifico" : "Cerrado actualmente"}
               </p>
 
               <ul className="space-y-2 text-xs">
-                {["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"].map((dia) => (
+                {["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"].map((dia) => (
                    <li key={dia} className="flex justify-between text-[#9ca3af]">
                     <span className="font-medium text-white">{dia}</span>
                     <span>8:00 - 06:00pm</span>
@@ -176,7 +165,6 @@ export function Footer() {
                 </li>
               </ul>
 
-              {/* Indicador visual de estado */}
               <div className={`mt-3 flex items-center gap-2 rounded-full px-3 py-1.5 ${status.isOpen ? 'bg-[rgba(34,197,94,0.1)]' : 'bg-[rgba(239,68,68,0.1)]'}`}>
                 <span className="relative flex h-2 w-2">
                   {status.isOpen && (
@@ -193,7 +181,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-[rgba(34,197,94,0.1)] px-4 py-4">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-center sm:flex-row">
           <p className="text-xs text-[#6b7280]">
@@ -201,10 +188,10 @@ export function Footer() {
               " - Todos los derechos reservados. Cali, Colombia."}
           </p>
           <p className="text-[10px] text-[#4b5563]">
-            Real Prints for Real People 🖨️🌐
+            Real Prints for Real People
           </p>
         </div>
       </div>
     </footer>
-  );
+  )
 }
