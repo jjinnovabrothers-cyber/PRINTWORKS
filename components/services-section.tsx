@@ -151,14 +151,20 @@ const SERVICES: Service[] = [
           { name: "Anime/Maestro Roshi", image: `${CUA}/cuadro-8.jpg` },
           { name: "Anime/Joker", image: `${CUA}/cuadro-2.jpg` },
           { name: "Anime/Goku blue", image: `${CUA}/cuadro-6.jpg` },
+          { name: "Anime", image: `${CUA}/anime.jpg.jpeg` },
+          { name: "Anime", image: `${CUA}/anime01.jpg.jpeg` },
+          { name: "Anime", image: `${CUA}/anime02.jpg.jpeg` },
         ]
       },
       {
         id: "naturaleza",
         name: "Naturaleza & Animales",
         items: [
-          { name: "Mascota/Animales", image: `${CUA}/cuadro-4.jpg` },
-          { name: "Set caballos 5 piezas", image: `${CUA}/cuadro-7.jpg` },
+          { name: "recordatorio-mascota", image: `${CUA}/cuadro-4.jpg` },
+          { name: "recordatorio-mascota", image: `${CUA}/cuadro-7.jpg` },
+          { name: "recordatorio-mascota", image: `${CUA}/recordatorio-mascota10.jpg` },
+          { name: "recordatorio-mascota", image: `${CUA}/recordatorio-mascota11.jpg` },
+          { name: "recordatorio-mascota", image: `${CUA}/recordatorio-mascota12.jpg` },
         ]
       },
       {
@@ -167,13 +173,20 @@ const SERVICES: Service[] = [
         items: [
           { name: "Cuadro clasico B/N", image: `${CUA}/cuadro-1.jpg` },
           { name: "Cuadros particionados 5 piezas", image: `${CUA}/cuadro-3.jpg` },
+          { name: "cuadro tematico", image: `${CUA}/cuadrotematico.jpg.jpeg` },
         ]
       },
       {
         id: "personalizados",
         name: "Personalizados",
         items: [
-          { name: "Personalizados, fotografia propia", image: `${CUA}/cuadro-5.jpg` },
+          { name: "Personalizados", image: `${CUA}/cuadro-5.jpg` },
+          { name: "Personalizados", image: `${CUA}/personalisados cuatro.jpg.jpeg` },
+          { name: "Personalizados", image: `${CUA}/personalisados sinco.jpg.jpeg` },
+          { name: "Personalizados", image: `${CUA}/personalisados tres.jpg.jpeg` },
+          { name: "Personalizados", image: `${CUA}/personalisados uno.jpg.jpeg` },
+          { name: "Personalizados", image: `${CUA}/personalisadosdos.jpg.jpeg` },
+          { name: "Personalizados", image: `${CUA}/personalisadosseis.jpg.jpeg` },
         ]
       }
     ]
