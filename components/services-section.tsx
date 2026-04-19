@@ -34,7 +34,7 @@ const SERVICES: Service[] = [
       { name: "Volantes", image: `${LIT}/Volantes.jpg.png` },
       { name: "Tarjetas de presentacion", image: `${LIT}/tarjetas-de-presentacion.jpg.png` },
       { name: "Stickers Adhesivos", image: `${LIT}/stickers.jpg.webp` },
-      { name: "Sellos", image: `${LIT}/Sellos.jpg` },
+      { name: "Sellos", image: `${LIT}/Sellos.jpg.jpg` },
       { name: "Etiquetas", image: `${LIT}/Etiquetas.jpg` },
       { name: "Plegables", image: `${LIT}/plegables.jpg.jpg` },
       { name: "Afiches", image: `${LIT}/Afiches.jpg.jpg` },
