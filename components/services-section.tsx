@@ -3,8 +3,18 @@
 import { useState, useCallback, useEffect } from "react"
 import Image from "next/image"
 
-interface ServiceItem { name: string; image: string }
-interface Service { id: number; title: string; icon: React.ReactNode; description: string; coverImage: string; items: ServiceItem[]; whatsappMsg: string }
+interface ServiceItem { name: string; image: string; category?: string }
+interface ServiceCategory { id: string; name: string; items: ServiceItem[] }
+interface Service { 
+  id: number; 
+  title: string; 
+  icon: React.ReactNode; 
+  description: string; 
+  coverImage: string; 
+  items?: ServiceItem[]; 
+  categories?: ServiceCategory[];
+  whatsappMsg: string 
+}
 
 const PrinterIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>)
 const TagIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>)
@@ -124,7 +134,7 @@ const SERVICES: Service[] = [
       { name: "Consultoria Digital", image: `${DIS}/Consultoria Digital.jpg.jpeg` },
     ],
   },
-  // 6. CUADROS DECORATIVOS
+  // 6. CUADROS DECORATIVOS - CON CATEGORIAS
   {
     id: 6,
     title: "Cuadros Decorativos",
@@ -132,17 +142,41 @@ const SERVICES: Service[] = [
     description: "Decoracion personalizada para hogares y oficinas con impresion artistica.",
     coverImage: `${CUA}/cuadro-9.jpg`,
     whatsappMsg: "Hola PRINTWORKS! Quiero cotizar cuadros decorativos.",
-    items: [
-      { name: "Anime/Kakashi", image: `${CUA}/cuadro-9.jpg` },
-      { name: "Anime/Maestro Roshi", image: `${CUA}/cuadro-8.jpg` },
-      { name: "Cuadros particionados 5 piezas", image: `${CUA}/cuadro-3.jpg` },
-      { name: "Anime/Joker", image: `${CUA}/cuadro-2.jpg` },
-      { name: "Mascota/Animales", image: `${CUA}/cuadro-4.jpg` },
-      { name: "Personalizados, fotografia propia", image: `${CUA}/cuadro-5.jpg` },
-      { name: "Anime/Goku blue", image: `${CUA}/cuadro-6.jpg` },
-      { name: "Set caballos 5 piezas", image: `${CUA}/cuadro-7.jpg` },
-      { name: "Cuadro clasico B/N", image: `${CUA}/cuadro-1.jpg` },
-    ],
+    categories: [
+      {
+        id: "anime",
+        name: "Anime & Manga",
+        items: [
+          { name: "Anime/Kakashi", image: `${CUA}/cuadro-9.jpg` },
+          { name: "Anime/Maestro Roshi", image: `${CUA}/cuadro-8.jpg` },
+          { name: "Anime/Joker", image: `${CUA}/cuadro-2.jpg` },
+          { name: "Anime/Goku blue", image: `${CUA}/cuadro-6.jpg` },
+        ]
+      },
+      {
+        id: "naturaleza",
+        name: "Naturaleza & Animales",
+        items: [
+          { name: "Mascota/Animales", image: `${CUA}/cuadro-4.jpg` },
+          { name: "Set caballos 5 piezas", image: `${CUA}/cuadro-7.jpg` },
+        ]
+      },
+      {
+        id: "clasicos",
+        name: "Clasicos & Arte",
+        items: [
+          { name: "Cuadro clasico B/N", image: `${CUA}/cuadro-1.jpg` },
+          { name: "Cuadros particionados 5 piezas", image: `${CUA}/cuadro-3.jpg` },
+        ]
+      },
+      {
+        id: "personalizados",
+        name: "Personalizados",
+        items: [
+          { name: "Personalizados, fotografia propia", image: `${CUA}/cuadro-5.jpg` },
+        ]
+      }
+    ]
   },
 ]
 
@@ -186,7 +220,15 @@ function Lightbox({ images, index, onClose, onPrev, onNext }: {
 /* Service Modal */
 function ServiceModal({ service, onClose }: { service: Service; onClose: () => void }) {
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null)
+  const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [form, setForm] = useState({ nombre: "", telefono: "", correo: "", descripcion: "" })
+
+  // Inicializar categoria activa si el servicio tiene categorias
+  useEffect(() => {
+    if (service.categories && service.categories.length > 0 && !activeCategory) {
+      setActiveCategory(service.categories[0].id)
+    }
+  }, [service.categories, activeCategory])
 
   useEffect(() => {
     document.body.style.overflow = "hidden"
@@ -194,17 +236,25 @@ function ServiceModal({ service, onClose }: { service: Service; onClose: () => v
   }, [])
 
   const handleSubmit = () => {
-    const m = `${service.whatsappMsg}%0ANombre: ${form.nombre}%0ATelefono: ${form.telefono}%0ACorreo: ${form.correo}%0ADescripcion: ${form.descripcion}`
+    const categoryInfo = activeCategory && service.categories 
+      ? ` - Categoria: ${service.categories.find(c => c.id === activeCategory)?.name}`
+      : ""
+    const m = `${service.whatsappMsg}${categoryInfo}%0ANombre: ${form.nombre}%0ATelefono: ${form.telefono}%0ACorreo: ${form.correo}%0ADescripcion: ${form.descripcion}`
     window.open(`https://wa.me/573173799589?text=${m}`, "_blank")
   }
 
+  // Obtener items a mostrar
+  const displayItems = service.categories && activeCategory
+    ? service.categories.find(c => c.id === activeCategory)?.items || []
+    : service.items || []
+
   const prevImg = useCallback(() => {
-    if (lightboxIdx !== null) setLightboxIdx(lightboxIdx <= 0 ? service.items.length - 1 : lightboxIdx - 1)
-  }, [lightboxIdx, service.items.length])
+    if (lightboxIdx !== null) setLightboxIdx(lightboxIdx <= 0 ? displayItems.length - 1 : lightboxIdx - 1)
+  }, [lightboxIdx, displayItems.length])
 
   const nextImg = useCallback(() => {
-    if (lightboxIdx !== null) setLightboxIdx(lightboxIdx >= service.items.length - 1 ? 0 : lightboxIdx + 1)
-  }, [lightboxIdx, service.items.length])
+    if (lightboxIdx !== null) setLightboxIdx(lightboxIdx >= displayItems.length - 1 ? 0 : lightboxIdx + 1)
+  }, [lightboxIdx, displayItems.length])
 
   return (<>
     <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/80 px-4 py-8 backdrop-blur-sm sm:py-12" onClick={onClose}>
@@ -226,8 +276,27 @@ function ServiceModal({ service, onClose }: { service: Service; onClose: () => v
         <div className="p-5 sm:p-7">
           <p className="mb-6 text-sm leading-relaxed text-[#9ca3af]">{service.description}</p>
 
+          {/* Tabs de categorias - solo para servicios con categorias */}
+          {service.categories && service.categories.length > 0 && (
+            <div className="mb-6 flex gap-2 overflow-x-auto pb-2">
+              {service.categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all ${
+                    activeCategory === category.id
+                      ? "bg-[#22c55e] text-[#0a0f0a] shadow-[0_0_15px_rgba(34,197,94,0.3)]"
+                      : "border border-[rgba(34,197,94,0.3)] text-[#22c55e] hover:border-[#22c55e] hover:bg-[rgba(34,197,94,0.1)]"
+                  }`}
+                >
+                  {category.name}
+                </button>
+              ))}
+            </div>
+          )}
+
           <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {service.items.map((item, idx) => (
+            {displayItems.map((item, idx) => (
               <button key={idx} onClick={() => setLightboxIdx(idx)} className="group overflow-hidden rounded-xl border border-[rgba(34,197,94,0.12)] bg-[rgba(10,15,10,0.6)] transition-all hover:border-[#22c55e] hover:shadow-[0_0_15px_rgba(34,197,94,0.1)]">
                 <div className="relative h-28 w-full overflow-hidden sm:h-32">
                   <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -256,7 +325,7 @@ function ServiceModal({ service, onClose }: { service: Service; onClose: () => v
       </div>
     </div>
     {lightboxIdx !== null && (
-      <Lightbox images={service.items} index={lightboxIdx} onClose={() => setLightboxIdx(null)} onPrev={prevImg} onNext={nextImg} />
+      <Lightbox images={displayItems} index={lightboxIdx} onClose={() => setLightboxIdx(null)} onPrev={prevImg} onNext={nextImg} />
     )}
   </>)
 }
