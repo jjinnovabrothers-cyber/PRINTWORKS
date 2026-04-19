@@ -33,7 +33,7 @@ export function HeroSection() {
             className="mb-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-5xl"
             style={{ fontFamily: "var(--font-orbitron, Rajdhani, sans-serif)" }}
           >
-            POTENCIAMOS TU MARCA, EN EL{" "}
+            POTENCIAMOS TU MARCA EN EL{" "}
             <span className="text-[#22c55e] block sm:inline drop-shadow-[0_0_20px_rgba(34,197,94,0.7)]">
               MUNDO REAL Y DIGITAL
             </span>
