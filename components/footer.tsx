@@ -90,7 +90,7 @@ export function Footer() {
             </div>
 
             <p className="text-xs leading-relaxed text-[#9ca3af]">
-              Real Prints for Real People. Soluciones integrales de impresion y
+              Real Prints for Real People, soluciones integrales de impresion y
               publicidad visual para tu negocio en Cali, Colombia.
             </p>
 

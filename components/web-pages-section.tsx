@@ -21,13 +21,13 @@ export function WebPagesSection() {
         {/* DISEÑAMOS TU PÁGINAS WEB */}
         <div className="mb-12 text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#22c55e] sm:text-sm">
-            DISEÑAMOS TU PÁGINAS WEB
+            DISEÑAMOS TU PÁGINA WEB
           </p>
           <h2
             className="mb-8 text-2xl font-bold uppercase leading-tight tracking-wider text-white sm:text-3xl md:text-4xl"
             style={{ fontFamily: "var(--font-orbitron)" }}
           >
-            SOLUCIONES A LA MEDIDA{" "}
+            SOLUCIONES A LA MEDIDA,{" "}
             <span className="text-[#22c55e]">PARA HACER CRECER TU NEGOCIO</span>
           </h2>
         </div>
@@ -72,7 +72,7 @@ export function WebPagesSection() {
               </h3>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-[#9ca3af]">
-              Páginas web diseñadas para generar clientes automáticamente, con
+              Páginas web, diseñadas para generar clientes automáticamente, con
               formularios, contacto directo y automatización básica.
             </p>
             <div className="border-t border-[rgba(234,179,8,0.2)] pt-4">
@@ -96,7 +96,8 @@ export function WebPagesSection() {
               </h3>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-[#9ca3af]">
-              Infraestructura robusta para empresas que necesitan E-Commerce o
+              Infraestructura robusta para empresas que necesitan,{" "}
+  <span className="whitespace-nowrap">E-Commerce </span> o
               plataformas más avanzadas.
             </p>
             <div className="border-t border-[rgba(239,68,68,0.2)] pt-4">
@@ -172,9 +173,9 @@ export function WebPagesSection() {
                   {/* Texto destacado */}
                   <p className="text-center text-base leading-relaxed text-[#d1d5db] sm:text-lg">
                     En <strong className="text-white">Printworks</strong> unimos lo
-                    mejor de dos mundos. Creamos{" "}
+                    mejor de dos mundos, creamos{" "}
                     <strong className="text-[#eab308]">
-                      impresiones que impactan
+                      impresiónes que impactan
                     </strong>{" "}
                     y{" "}
                     <strong className="text-[#22c55e]">
@@ -187,7 +188,7 @@ export function WebPagesSection() {
                     No importa si estás en <strong className="text-white">Cali</strong>
                     , en cualquier lugar de{" "}
                     <strong className="text-white">Colombia</strong> o incluso en otro
-                    país. Personalizamos tu éxito con estilo, tecnología y seguridad.
+                    país, personalizamos tu éxito con estilo, tecnología y seguridad.
                   </p>
 
                   {/* Separador decorativo */}
@@ -205,8 +206,8 @@ export function WebPagesSection() {
                   {/* Mensaje de advertencia */}
                   <div className="rounded-xl border border-[#eab308]/20 bg-[rgba(234,179,8,0.05)] p-6 text-center">
                     <p className="mb-4 text-base leading-relaxed text-[#d1d5db]">
-                      Muchos emprendedores construyen su marca solo en redes sociales.
-                      Pero las redes son{" "}
+                      Muchos emprendedores construyen, su marca solo en redes sociales,
+                      pero las redes son{" "}
                       <strong className="text-[#eab308]">"terreno prestado"</strong>.
                       Si mañana cambia el algoritmo o cierran tu cuenta...
                     </p>
@@ -217,11 +218,11 @@ export function WebPagesSection() {
                     {/* Property box */}
                     <div className="mt-6 rounded-lg border border-[#22c55e]/30 bg-[rgba(34,197,94,0.05)] p-5">
                       <h4 className="mb-2 text-lg font-bold text-white">
-                        Una página web es tu propiedad privada
+                        Una página web, es tu propiedad privada.
                       </h4>
                       <p className="text-sm text-[#d1d5db]">
                         Es el único lugar donde tú pones las reglas y donde tus
-                        clientes pueden encontrarte en Google cuando buscan tus
+                        clientes pueden encontrarte en Google, cuando buscan tus
                         servicios.
                       </p>
                     </div>
@@ -311,7 +312,7 @@ export function WebPagesSection() {
                   ✓
                 </span>
                 <p className="text-sm text-[#d1d5db]">
-                  Sitios ultra rápidos que cargan en{" "}
+                  Sitios ultra rápidos que cargan, en{" "}
                   <strong className="text-white">menos de 2 segundos</strong>.
                 </p>
               </div>
@@ -332,10 +333,10 @@ export function WebPagesSection() {
           <div className="text-center">
             <div className="inline-block rounded-2xl border border-[rgba(34,197,94,0.2)] bg-linear-to-b from-[rgba(34,197,94,0.05)] to-transparent p-6">
               <p className="mb-2 text-base font-bold text-white sm:text-lg">
-                Es hora de que tu negocio trabaje mientras tú descansas
+                Es hora de que tu negocio trabaje mientras tú descansas.
               </p>
               <p className="text-sm text-[#9ca3af]">
-                Una página web profesional es tu mejor vendedor{" "}
+                Una página web profesional, es tu mejor vendedor{" "}
                 <strong className="text-[#22c55e]">disponible 24/7</strong>
               </p>
               <div className="mt-4 flex justify-center gap-2 text-2xl">

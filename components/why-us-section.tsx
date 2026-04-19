@@ -45,7 +45,7 @@ export function WhyUsSection() {
             <span className="text-[#22c55e]">PRINTWORKS</span>?
           </h2>
           <p className="mb-8 max-w-xl text-sm leading-relaxed text-[#9ca3af] sm:text-base">
-            En PRINTWORKS combinamos tecnologia de punta, materiales de alta calidad y un equipo de expertos para ofrecerte lo mejor en soluciones de impresion.
+            En PRINTWORKS combinamos tecnologia de punta, materiales de alta calidad y un equipo de expertos para ofrecerte lo mejor, en soluciones de impresion.
           </p>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">

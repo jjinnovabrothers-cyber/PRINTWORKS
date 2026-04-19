@@ -34,7 +34,8 @@ const SERVICES: Service[] = [
       { name: "Volantes", image: `${LIT}/Volantes.jpg.png` },
       { name: "Tarjetas de presentacion", image: `${LIT}/tarjetas-de-presentacion.jpg.png` },
       { name: "Stickers Adhesivos", image: `${LIT}/stickers.jpg.webp` },
-      { name: "Etiquetas / Sellos", image: `${LIT}/sellos.jpg` },
+      { name: "Sellos", image: `${LIT}/Sellos.jpg` },
+      { name: "Etiquetas", image: `${LIT}/Etiquetas.jpg` },
       { name: "Plegables", image: `${LIT}/plegables.jpg.jpg` },
       { name: "Afiches", image: `${LIT}/Afiches.jpg.jpg` },
       { name: "Catalogos", image: `${LIT}/catalogo.jpg.jpg` },
@@ -48,7 +49,7 @@ const SERVICES: Service[] = [
     id: 2,
     title: "Impresion Digital (Gran Formato)",
     icon: <PrinterIcon />,
-    description: "Impresion digital en gran formato para publicidad exterior y visibilidad de marca.",
+    description: "Impresion digital en gran formato, para publicidad exterior y visibilidad de marca.",
     coverImage: `${DIG}/vallas-publicitarias3.jpg.jpg`,
     whatsappMsg: "Hola PRINTWORKS! Quiero cotizar impresion digital.",
     items: [
@@ -69,7 +70,7 @@ const SERVICES: Service[] = [
     id: 3,
     title: "Souvenirs Promocionales",
     icon: <GiftIcon />,
-    description: "Articulos personalizados que dejan huella para promocionar tu marca.",
+    description: "Articulos personalizados, que dejan huella para promocionar tu marca.",
     coverImage: `${SOU}/Mugs.jpg`,
     whatsappMsg: "Hola PRINTWORKS! Quiero cotizar souvenirs promocionales.",
     items: [
@@ -78,9 +79,7 @@ const SERVICES: Service[] = [
       { name: "Lapiceros corporativos", image: `${SOU}/lapiceros.webp` },
       { name: "Carnets corporativos", image: `${SOU}/Carnts corporativos.jpg` },
       { name: "Agendas", image: `${SOU}/agendas.jpg` },
-      { name: "Camiseta estampada personalizada 02", image: `${SOU}/Camiseta estampada personalizada 02.jpg` },
-      { name: "Camiseta estampada personalizada 03", image: `${SOU}/Camiseta estampada personalizada 03.png` },
-      { name: "Camiseta estampada personalizada01", image: `${SOU}/Camiseta estampada personalizada01.jpg` },
+      { name: "Camiseta estampada personalizada o corporativas", image: `${SOU}/Camiseta estampada personalizadaS o corporativas.png` },
       { name: "Gorras personalizadas", image: `${SOU}/Gorras personalizadas.webp` },
       { name: "Llavero cuadrado", image: `${SOU}/llavero cuadrado para personalizar.jpg` },
       { name: "Llaveros", image: `${SOU}/Llaveros.webp` },
@@ -92,7 +91,7 @@ const SERVICES: Service[] = [
     id: 4,
     title: "Material P.O.P",
     icon: <TagIcon />,
-    description: "Material publicitario en punto de venta que impulsa tus ventas.",
+    description: "Material publicitario en punto de venta, que impulsa tus ventas.",
     coverImage: `${POP}/Exhibidor De Piso.jpg`,
     whatsappMsg: "Hola PRINTWORKS! Quiero cotizar material POP.",
     items: [
@@ -109,20 +108,20 @@ const SERVICES: Service[] = [
   // 5. DISENO WEB
   {
     id: 5,
-    title: "Diseno de Paginas Web",
+    title: "Diseño de Paginas Web",
     icon: <BookIcon />,
-    description: "Soluciones tecnologicas avanzadas para empresas que buscan escalar su negocio con infraestructura digital segura, automatizacion e inteligencia artificial.",
-    coverImage: `${DIS}/diseño-paginas-web.jpg.jpg`,
+    description: "Soluciones tecnologicas avanzadas para empresas, que buscan escalar su negocio con infraestructura digital segura, automatización e inteligencia artificial.",
+    coverImage: `${DIS}/Infraestructura Cloud.jpg.jpeg`,
     whatsappMsg: "Hola PRINTWORKS! Quiero cotizar servicios de ingenieria y desarrollo.",
     items: [
-      { name: "Aplicaciones Web y Moviles", image: `${DIS}/diseño-paginas-web.jpg.jpg` },
-      { name: "Seguridad y Ciberseguridad 24/7", image: `${DIS}/diseño-paginas-web.jpg.jpg` },
-      { name: "Infraestructura Cloud", image: `${DIS}/diseño-paginas-web.jpg.jpg` },
-      { name: "Integracion de IA", image: `${DIS}/diseño-paginas-web.jpg.jpg` },
-      { name: "Automatizacion (n8n)", image: `${DIS}/diseño-paginas-web.jpg.jpg` },
-      { name: "Sistemas de Gestion", image: `${DIS}/diseño-paginas-web.jpg.jpg` },
-      { name: "Mantenimiento y Soporte", image: `${DIS}/diseño-paginas-web.jpg.jpg` },
-      { name: "Consultoria Digital", image: `${DIS}/diseño-paginas-web.jpg.jpg` },
+      { name: "Tecnología en tus manos", image: `${DIS}/Tecnologia en tus manos.jpg.jpeg` },
+      { name: "Seguridad y Ciberseguridad 24/7", image: `${DIS}/Seguridad y Ciberseguridad 24/7.jpg.jpeg` },
+      { name: "Infraestructura Cloud", image: `${DIS}/Infraestructura Cloud.jpg.jpeg` },
+      { name: "Automatizacion (n8n)", image: `${DIS}/Automatizacion (n8n).jpg.jpeg` },
+      { name: "Integracion de IA", image: `${DIS}/Integracion de IA.jpg.jpeg` },
+      { name: "Sistemas de Gestion", image: `${DIS}/Sistemas de Gestión.jpg.jpeg` },
+      { name: "Mantenimiento y Soporte", image: `${DIS}/Mantenimiento y soporte.jpg.jpeg` },
+      { name: "Consultoria Digital", image: `${DIS}/Consultoria Digital.jpg.jpeg` },
     ],
   },
   // 6. CUADROS DECORATIVOS
@@ -134,13 +133,13 @@ const SERVICES: Service[] = [
     coverImage: `${CUA}/cuadro-9.jpg`,
     whatsappMsg: "Hola PRINTWORKS! Quiero cotizar cuadros decorativos.",
     items: [
-      { name: "Cuadro Kakashi", image: `${CUA}/cuadro-9.jpg` },
-      { name: "Cuadro Maestro Roshi", image: `${CUA}/cuadro-8.jpg` },
-      { name: "Set Joker 5 piezas", image: `${CUA}/cuadro-3.jpg` },
-      { name: "Cuadro Joker", image: `${CUA}/cuadro-2.jpg` },
-      { name: "Cuadro cachorro", image: `${CUA}/cuadro-4.jpg` },
-      { name: "Cuadro retrato", image: `${CUA}/cuadro-5.jpg` },
-      { name: "Cuadro Goku blue", image: `${CUA}/cuadro-6.jpg` },
+      { name: "Anime/Kakashi", image: `${CUA}/cuadro-9.jpg` },
+      { name: "Anime/Maestro Roshi", image: `${CUA}/cuadro-8.jpg` },
+      { name: "Cuadros particionados 5 piezas", image: `${CUA}/cuadro-3.jpg` },
+      { name: "Anime/Joker", image: `${CUA}/cuadro-2.jpg` },
+      { name: "Mascota/Animales", image: `${CUA}/cuadro-4.jpg` },
+      { name: "Personalizados, fotografia propia", image: `${CUA}/cuadro-5.jpg` },
+      { name: "Anime/Goku blue", image: `${CUA}/cuadro-6.jpg` },
       { name: "Set caballos 5 piezas", image: `${CUA}/cuadro-7.jpg` },
       { name: "Cuadro clasico B/N", image: `${CUA}/cuadro-1.jpg` },
     ],
@@ -303,7 +302,7 @@ export function ServicesSection() {
             Nuestros <span className="text-[#22c55e]">Servicios</span>
           </h2>
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-[#9ca3af] sm:text-base">
-            Soluciones graficas disenadas para destacar. Cada producto se fabrica con tecnologia de punta y materiales de la mejor calidad.
+            Soluciones graficas diseñadas para destacar, cada producto se fabrica con tecnologia de punta y materiales de la mejor calidad.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">

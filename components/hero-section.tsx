@@ -33,15 +33,15 @@ export function HeroSection() {
             className="mb-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-5xl"
             style={{ fontFamily: "var(--font-orbitron, Rajdhani, sans-serif)" }}
           >
-            POTENCIAMOS TU MARCA EN EL{" "}
+            POTENCIAMOS TU MARCA, EN EL{" "}
             <span className="text-[#22c55e] block sm:inline drop-shadow-[0_0_20px_rgba(34,197,94,0.7)]">
               MUNDO REAL Y DIGITAL
             </span>
           </h1>
 
           <p className="mb-6 text-base leading-relaxed text-[#9ca3af]">
-            Somos expertos en soluciones de alto impacto: desde <strong>impresion profesional</strong> y 
-            publicidad que es palpable, hasta el diseno y creacion de <span className="text-[#22c55e]">paginas web</span> para que te 
+            Somos expertos en soluciones de alto impacto, desde <strong>impresión profesional</strong> y 
+            publicidad que es palpable, hasta el diseño y creación de <span className="text-[#22c55e]">páginas web</span> para que te 
             encuentren en todo el mundo.
           </p>
 

@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils"
 const servicios = [
   {
     title: "SERVICIOS DE IMPRESION",
-    href: "#servicios-impresion",
+    href: "#servicios-impresión",
     description: "Impresion de alta calidad para todos tus proyectos.",
   },
   {
@@ -26,17 +26,17 @@ const servicios = [
   {
     title: "SOUVENIRS PROMOCIONALES",
     href: "#souvenirs",
-    description: "Articulos promocionales personalizados.",
+    description: "Artículo promocionales personalizados.",
   },
   {
     title: "PRODUCCION LITOGRAFICA",
     href: "#litografia",
-    description: "Impresion litografica profesional.",
+    description: "Impresion Litografíca profesional.",
   },
   {
-    title: "DISENO DE PAGINAS WEB",
-    href: "#diseno-web",
-    description: "Desarrollo y diseno de sitios web.",
+    title: "DISEÑO DE PAGINAS WEB",
+    href: "#diseño-web",
+    description: "Desarrollo y diseño de sitios web.",
   },
 ]
 

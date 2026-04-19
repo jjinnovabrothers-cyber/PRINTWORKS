@@ -5,7 +5,7 @@ export function AnnouncementBar() {
     "Descuentos por volumen de impresion",
     "Entregas rapidas y personalizadas",
     "Cotizaciones inmediatas por WhatsApp",
-    "Servicio de diseno publicitario incluido",
+    "Servicio de diseño publicitario incluido",
     "Envios a toda Colombia",
     "Paginas web profesionales para tu negocio",
   ]
