@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const SERVICES_LINKS = [
   "Impresion Offset (Litografica)",
@@ -89,19 +90,30 @@ export function Footer() {
               />
             </div>
 
-            <p className="text-xs leading-relaxed text-[#9ca3af]">
-              Real Prints for Real People, soluciones integrales de impresion y
-              publicidad visual para tu negocio en Cali, Colombia.
-            </p>
+            <div className="mt-4 flex gap-4">
+  
+  <a 
+    href="https://www.facebook.com/profile.php?id=61587542399433"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1877F2] text-white text-xl transition-transform hover:scale-110"
+  >
+    <FaFacebookF />
+  </a>
 
-            <div className="mt-4 flex gap-3">
-              <a href="#" className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(34,197,94,0.2)] text-[#9ca3af] transition-colors hover:border-[#22c55e] hover:text-[#22c55e]">
-                <span className="text-sm">f</span>
-              </a>
-              <a href="#" className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(34,197,94,0.2)] text-[#9ca3af] transition-colors hover:border-[#22c55e] hover:text-[#22c55e]">
-                <span className="text-sm">ig</span>
-              </a>
-            </div>
+  <a 
+    href="https://www.instagram.com/printworkscali"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex h-12 w-12 items-center justify-center rounded-full text-white text-xl transition-transform hover:scale-110"
+    style={{
+      background: "linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4)"
+    }}
+  >
+    <FaInstagram />
+  </a>
+
+</div>
           </div>
 
           <div>
@@ -136,9 +148,24 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-2 text-xs text-[#9ca3af]">
-                <span className="mt-0.5 text-[#22c55e]">*</span>
-                <span>info@printworks.co</span>
-              </li>
+  <span className="mt-0.5 text-[#22c55e]">*</span>
+  <a 
+    href="mailto:printworkscali@gmail.com"
+    className="hover:text-white transition"
+  >
+    printworkscali@gmail.com
+  </a>
+</li>
+
+<li className="flex items-start gap-2 text-xs text-[#9ca3af]">
+  <span className="mt-0.5 text-[#22c55e]">*</span>
+  <a 
+    href="mailto:manuelag@printworks.com.co"
+    className="hover:text-white transition"
+  >
+    manuelag@printworks.com.co
+  </a>
+</li>
             </ul>
           </div>
 
