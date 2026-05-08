@@ -222,3 +222,4 @@ export function Footer() {
     </footer>
   )
 }
+console.log("CHITO TEST");
